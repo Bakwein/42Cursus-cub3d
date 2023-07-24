@@ -1,0 +1,11 @@
+Hello!
+
+Command:
+W, A, S and D: move in all 4 directions
+arrow_left, arrow_right: move the camera
+
+Bonus command:
+C : crouch
+K : key to close the doors
+Shift : to kill nearby crewmates (beware of the cooldown)
+arrow_up : sprint
