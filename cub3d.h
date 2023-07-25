@@ -6,7 +6,7 @@
 /*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 02:02:12 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/07/25 14:56:27 by stunca           ###   ########.fr       */
+/*   Updated: 2023/07/25 22:43:00 by stunca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -152,8 +152,8 @@ typedef struct	s_data
 	int				attack;
 	int				crew;
 	int				v_bool_print_score;
-	int				heart[11][11];
-	int				the_end[5][36];
+	int				heart[11][11]; //kalp
+	int				the_end[19][36]; // end mesaji
 
 	int				sprite_num;
 	double			sprite[1001][5];
@@ -249,6 +249,7 @@ void			initialize_heart(t_data *data);
 
 void			heal_at_spawn(t_data *data);
 void			initialize_the_end(t_data *data);
+void  end_names(char *tab[]);
 void			echo_the_end(t_data *data);
 
 int				is_in(char c, char *str);

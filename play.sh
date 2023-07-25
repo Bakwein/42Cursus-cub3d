@@ -14,7 +14,7 @@ cat << "END"
                               |___/             
 END
 make fclean
-make bonus
+make
 echo ""
 echo ""
 echo -e "${BLUE}"
@@ -39,6 +39,3 @@ cat << "BY"
                                   __/ |
                                  |___/ 
 
-Code and idea by bmerchin
-Textures by vo-nguye
-BY

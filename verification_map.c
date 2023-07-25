@@ -6,7 +6,7 @@
 /*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/10 10:56:04 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/07/25 14:48:33 by stunca           ###   ########.fr       */
+/*   Updated: 2023/07/25 22:20:19 by stunca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,9 +93,9 @@ void	check_map2(t_data *data, int x, int y)
 
 void	check_map(t_data *data)
 {
-	int x;
-	int y;
-	int len;
+	int	x;
+	int	y;
+	int	len;
 
 	y = 0;
 	data->crew = 0;

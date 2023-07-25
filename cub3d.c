@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bmerchin <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/10 10:56:04 by bmerchin          #+#    #+#             */
-/*   Updated: 2021/01/12 16:17:14 by bmerchin         ###   ########.fr       */
+/*   Updated: 2023/07/25 22:46:47 by stunca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,19 @@
 ** security 9 : If there is a missing wall
 ** security 10 : Wrong character
 ** security 11 : Texture opening check
+*/
+
+/*
+
+Command:
+W, A, S and D: move in all 4 directions
+arrow_left, arrow_right: move the camera
+
+Bonus command:
+C : crouch
+K : key to close the doors
+Shift : to kill nearby crewmates (beware of the cooldown)
+arrow_up : sprint
 */
 
 void	raycasting_calculation(t_data *data)
@@ -80,9 +93,9 @@ void	run_mlx(t_data *data)
 	data->mlx = mlx_init();
 	if (data->save == 0)
 	{
-		screen_resize(data);
+		screen_resize(data); // bu kalkacak şimdilik bıraktım
 		data->win = mlx_new_window(data->mlx, data->x_screen_size,
-		data->y_screen_size, "Among Us in cub3D - A 42 Paris Project");
+		data->y_screen_size, "cub3D - stunca&hsozan");
 		mlx_loop_hook(data->mlx, render_next_frame, data);
 		mlx_hook(data->win, 2, 1L << 0, ft_key_hook, data);
 		mlx_hook(data->win, 3, 1L << 1, ft_key_unhook, data);

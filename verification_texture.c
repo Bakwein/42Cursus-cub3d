@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   verification_texture.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bmerchin <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 11:05:36 by bmerchin          #+#    #+#             */
-/*   Updated: 2021/02/23 11:05:38 by bmerchin         ###   ########.fr       */
+/*   Updated: 2023/07/25 22:19:57 by stunca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	open_then_read(char *str, t_data *data)
 {
-	int fd;
+	int	fd;
 
 	fd = open(str, O_RDONLY);
 	if (fd == -1)
@@ -33,7 +33,7 @@ void	open_then_read(char *str, t_data *data)
 
 void	texture_check(t_data *data)
 {
-	int i;
+	int	i;
 
 	i = 5;
 	open_then_read(data->text[0].path, data);
