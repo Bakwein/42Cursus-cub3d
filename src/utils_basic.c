@@ -6,7 +6,7 @@
 /*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 12:37:22 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/07/25 23:10:11 by stunca           ###   ########.fr       */
+/*   Updated: 2023/07/25 23:54:32 by stunca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_putstr_bn(char *str)
 	write(0, "\n", 1);
 }
 
-int		ft_atoi(char *str)
+int	ft_atoi(char *str)
 {
 	int		i;
 	int		sign;
@@ -46,7 +46,7 @@ int		ft_atoi(char *str)
 	return (nbr * sign);
 }
 
-int		ft_atoi_parsing(char *str, int *i)
+int	ft_atoi_parsing(char *str, int *i)
 {
 	int		sign;
 	long	nbr;
@@ -81,7 +81,8 @@ char	*ft_strdup(char *s1)
 
 	i = 0;
 	len = ft_strlen(s1);
-	if (!(new = malloc(sizeof(char) * len + 1)))
+	new = malloc(sizeof(char) * len + 1);
+	if (!(new))
 		return (0);
 	while (i < len)
 	{

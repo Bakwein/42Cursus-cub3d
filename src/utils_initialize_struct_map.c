@@ -6,7 +6,7 @@
 /*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 15:47:55 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/07/25 23:09:10 by stunca           ###   ########.fr       */
+/*   Updated: 2023/07/25 23:59:45 by stunca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	initialize_struct2(t_data *data)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	data->time = 0;
 	data->life = 30;
@@ -40,7 +40,7 @@ void	initialize_struct2(t_data *data)
 
 void	intialize_struct(t_data *data)
 {
-	int i;
+	int	i;
 
 	i = -1;
 	data->forward = 0;

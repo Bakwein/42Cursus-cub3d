@@ -6,7 +6,7 @@
 /*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/10 10:56:04 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/07/25 23:10:51 by stunca           ###   ########.fr       */
+/*   Updated: 2023/07/25 23:41:11 by stunca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ arrow_up : sprint
 
 void	raycasting_calculation(t_data *data)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < data->x_screen_size)
@@ -62,7 +62,7 @@ void	raycasting_calculation(t_data *data)
 	save_image(data);
 }
 
-int		render_next_frame(t_data *data)
+int	render_next_frame(t_data *data)
 {
 	if (data->save == 0)
 		mlx_put_image_to_window(data->mlx, data->win, data->img, 0, 0);
@@ -76,7 +76,7 @@ int		render_next_frame(t_data *data)
 	heal_at_spawn(data);
 	attack_if_possible(data);
 	raycasting_calculation(data);
-	if (MINIMAP_SIZE * data->x_map <= data->x_screen_size
+	if (MINIMAP_SIZE * data->x_map <= data->x_screen_size \
 	&& MINIMAP_SIZE * data->y_map <= data->y_screen_size && BONUS)
 		add_minimap_and_company(data);
 	data->frame++;
@@ -94,7 +94,7 @@ void	run_mlx(t_data *data)
 	if (data->save == 0)
 	{
 		screen_resize(data); // bu kalkacak şimdilik bıraktım
-		data->win = mlx_new_window(data->mlx, data->x_screen_size,
+		data->win = mlx_new_window(data->mlx, data->x_screen_size, \
 		data->y_screen_size, "cub3D - stunca&hsozan");
 		mlx_loop_hook(data->mlx, render_next_frame, data);
 		mlx_hook(data->win, 2, 1L << 0, ft_key_hook, data);
@@ -102,9 +102,9 @@ void	run_mlx(t_data *data)
 		if (LINUX)
 			mlx_hook(data->win, 33, 1L << 5, exit_free, data);
 	}
-	data->img = mlx_new_image(data->mlx, data->x_screen_size,
+	data->img = mlx_new_image(data->mlx, data->x_screen_size, \
 		data->y_screen_size);
-	data->addr = mlx_get_data_addr(data->img,
+	data->addr = mlx_get_data_addr(data->img, \
 		&data->bits_per_pixel, &data->line_length, &data->endian);
 	init_images_mlx(data);
 	if (data->save == 1)
@@ -112,7 +112,7 @@ void	run_mlx(t_data *data)
 	mlx_loop(data->mlx);
 }
 
-int		main(int ac, char **av)
+int	main(int ac, char **av)
 {
 	int		fd;
 	char	*line;

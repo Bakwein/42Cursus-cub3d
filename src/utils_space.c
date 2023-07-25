@@ -6,7 +6,7 @@
 /*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 15:04:59 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/07/25 23:08:50 by stunca           ###   ########.fr       */
+/*   Updated: 2023/07/25 23:37:00 by stunca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	multiple_empty_lines(t_data *data)
 {
 	if (data->y_map < 2)
 		return ;
-	if (ft_strlen(data->map[data->y_map]) == 0 &&
+	if (ft_strlen(data->map[data->y_map]) == 0 && \
 	ft_strlen(data->map[data->y_map - 1]) == 0)
 	{
 		data->security[11] = 1;

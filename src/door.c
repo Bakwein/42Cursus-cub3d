@@ -6,7 +6,7 @@
 /*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 10:02:34 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/07/25 23:10:48 by stunca           ###   ########.fr       */
+/*   Updated: 2023/07/25 23:56:13 by stunca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	close_door(t_data *data)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	if (!BONUS)
@@ -38,8 +38,8 @@ void	close_door(t_data *data)
 
 void	open_door(t_data *data)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	j = 0;

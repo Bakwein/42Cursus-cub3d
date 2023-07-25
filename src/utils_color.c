@@ -6,7 +6,7 @@
 /*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 15:04:59 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/07/25 23:09:14 by stunca           ###   ########.fr       */
+/*   Updated: 2023/07/25 23:46:07 by stunca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	get_b(int i)
 
 int	store_color(int i, int j, int k, int l)  // bu fonk biraz sacma i'yi 0 gönderiyor. Gereksiz uğraşmış gibi xD
 {
-	int color;
+	int	color;
 
 	color = i;
 	color *= 256;

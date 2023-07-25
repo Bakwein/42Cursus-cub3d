@@ -6,7 +6,7 @@
 /*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 11:07:48 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/07/25 23:10:21 by stunca           ###   ########.fr       */
+/*   Updated: 2023/07/25 23:44:05 by stunca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	bmp_top_info(t_data *data, int fd)
 {
-	int buff;
-	int i;
+	int	buff;
+	int	i;
 
 	write(fd, "BM", 2);
 	buff = 14 + 40 + 4 * data->x_screen_size * data->y_screen_size;
@@ -42,7 +42,7 @@ void	bmp_top_info(t_data *data, int fd)
 
 void	screenshot(t_data *data)
 {
-	int fd;
+	int	fd;
 	int	x;
 	int	y;
 
@@ -65,7 +65,7 @@ void	save_image(t_data *data)
 {
 	if (data->save == 1)
 	{
-		if (MINIMAP_SIZE * data->x_map <= data->x_screen_size &&
+		if (MINIMAP_SIZE * data->x_map <= data->x_screen_size && \
 		MINIMAP_SIZE * data->y_map <= data->y_screen_size && BONUS)
 		{
 			add_minimap_and_company(data);
@@ -81,8 +81,8 @@ void	save_image(t_data *data)
 
 void	screen_resize(t_data *data)
 {
-	int x;
-	int y;
+	int	x;
+	int	y;
 
 	mlx_get_screen_size(data->mlx, &x, &y);
 	if (data->x_screen_size > x && data->save == 0)

@@ -6,7 +6,7 @@
 /*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/12 13:48:47 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/07/25 23:09:01 by stunca           ###   ########.fr       */
+/*   Updated: 2023/07/25 23:32:53 by stunca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,9 @@ void	print_info(t_data *data)
 	printf("Y Map Size : %d\n", data->y_map);
 }
 
-int		free_struct(t_data *data, int m)
+int	free_struct(t_data *data, int m)
 {
-	int i;
+	int	i;
 
 	free(data->text[0].path);
 	free(data->text[1].path);
@@ -66,7 +66,7 @@ int		free_struct(t_data *data, int m)
 
 void	print_map(t_data *data)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (BONUS)

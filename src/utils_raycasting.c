@@ -6,7 +6,7 @@
 /*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 11:52:54 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/07/25 23:08:57 by stunca           ###   ########.fr       */
+/*   Updated: 2023/07/25 23:36:15 by stunca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,25 +17,25 @@ void	raycasting_initialize2(t_data *data)
 	if (data->x_ray_dir < 0)
 	{
 		data->x_step = -1;
-		data->x_side_dist =
+		data->x_side_dist = \
 		(data->x_pos - data->x_raymap) * data->x_delta_dist;
 	}
 	else
 	{
 		data->x_step = 1;
-		data->x_side_dist =
+		data->x_side_dist = \
 		(data->x_raymap + 1.0 - data->x_pos) * data->x_delta_dist;
 	}
 	if (data->y_ray_dir < 0)
 	{
 		data->y_step = -1;
-		data->y_side_dist =
+		data->y_side_dist = \
 		(data->y_pos - data->y_raymap) * data->y_delta_dist;
 	}
 	else
 	{
 		data->y_step = 1;
-		data->y_side_dist =
+		data->y_side_dist = \
 		(data->y_raymap + 1.0 - data->y_pos) * data->y_delta_dist;
 	}
 }
@@ -92,17 +92,17 @@ void	raycasting_move_until_wall(t_data *data)
 void	raycasting_line_position(t_data *data)
 {
 	if (data->side == 0)
-		data->dist_wall = (data->x_raymap -
+		data->dist_wall = (data->x_raymap - \
 		data->x_pos + (1 - data->x_step) / 2) / data->x_ray_dir;
 	else
-		data->dist_wall = (data->y_raymap -
+		data->dist_wall = (data->y_raymap - \
 		data->y_pos + (1 - data->y_step) / 2) / data->y_ray_dir;
 	data->line_size = (int)(data->y_screen_size / data->dist_wall);
-	data->line_start = -data->line_size / 2
+	data->line_start = -data->line_size / 2 \
 	+ data->y_screen_size / 2 + data->crouch;
 	if (data->line_start < 0)
 		data->line_start = 0;
-	data->line_end = data->line_size / 2
+	data->line_end = data->line_size / 2 \
 	+ data->y_screen_size / 2 + data->crouch;
 	if (data->line_end >= data->y_screen_size)
 		data->line_end = data->y_screen_size - 1;

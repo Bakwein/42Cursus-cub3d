@@ -6,7 +6,7 @@
 /*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/12 16:03:33 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/07/25 23:10:01 by stunca           ###   ########.fr       */
+/*   Updated: 2023/07/25 23:37:49 by stunca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,8 @@ int	security_cub_av_check(char **av, t_data *data, int ac)
 
 int	security_cub(int ac, char **av, t_data *data, int fd)
 {
-	int i;
-	int len;
+	int	i;
+	int	len;
 
 	i = 0;
 	len = ft_strlen(av[1]);
@@ -91,7 +91,7 @@ int	security_data_extension(t_data *data)
 
 int	security_data(t_data *data)
 {
-	int i;
+	int	i;
 
 	i = -1;
 	while (++i < 8)
@@ -104,7 +104,7 @@ int	security_data(t_data *data)
 		}
 		if (data->security[i] > 1)
 		{
-			if (i == 3 && BONUS && data->security[i] == 1
+			if (i == 3 && BONUS && data->security[i] == 1 \
 			+ NUM_SPRITE_BOMUS + NUM_TEXTURE_BONUS) // 3:sprite+S
 				;
 			else

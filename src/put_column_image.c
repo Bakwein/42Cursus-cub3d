@@ -6,7 +6,7 @@
 /*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 11:23:58 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/07/25 23:10:24 by stunca           ###   ########.fr       */
+/*   Updated: 2023/07/25 23:55:23 by stunca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void	texture_calculation(t_data *data, double *step,
 	if (data->side == 1 && data->y_ray_dir > 0)
 		data->x_texture = data->text[*id].width - data->x_texture - 1;
 	*step = 1.0 * data->text[*id].height / data->line_size;
-	*tex_pos = (data->line_start - data->y_screen_size / 2 +
+	*tex_pos = (data->line_start - data->y_screen_size / 2 + \
 	data->line_size / 2 - data->crouch) * (*step);
 }
 
@@ -87,8 +87,8 @@ void	put_column_image(t_data *data, int column)
 	{
 		data->y_texture = (int)tex_pos & (data->text[id].height - 1);
 		tex_pos += step;
-		*(unsigned int *)(data->addr + (i * data->line_length + column * 4)) =
-		*(unsigned int *)(data->text[id].add +
+		*(unsigned int *)(data->addr + (i * data->line_length + \
+		column * 4)) = *(unsigned int *)(data->text[id].add + \
 		data->y_texture * data->text[id].line_length + data->x_texture * 4);
 		i++;
 	}

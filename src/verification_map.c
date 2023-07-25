@@ -6,7 +6,7 @@
 /*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/10 10:56:04 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/07/25 23:08:42 by stunca           ###   ########.fr       */
+/*   Updated: 2023/07/25 23:57:04 by stunca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,8 @@ void	find_wall3(t_data *data, int x, int y)
 
 void	find_wall(t_data *data, int x, int y)
 {
-	int start_x;
-	int start_y;
+	int	start_x;
+	int	start_y;
 
 	if (is_in(data->map[y][x], "2") || BONUS * is_in(data->map[y][x], "jklmno"))
 		store_sprite(data, x, y);

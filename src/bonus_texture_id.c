@@ -6,19 +6,19 @@
 /*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 15:04:59 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/07/25 23:10:57 by stunca           ###   ########.fr       */
+/*   Updated: 2023/07/25 23:39:39 by stunca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
 
-int		long_condition(char *line)
+int	long_condition(char *line)
 {
-	if ((line[0] == 'S' && line[1] == ' ') || (is_in(line[0],
-		"TUVWabcdefghklmno.,_@#$GHIJKLMNOPQ") &&
-			line[1] == ' ' && BONUS) || (((line[0] == 'N' &&
-			line[1] == 'O') || (line[0] == 'S' && line[1] == 'O') ||
-			(line[0] == 'W' && line[1] == 'E') || (line[0] == 'E' &&
+	if ((line[0] == 'S' && line[1] == ' ') || (is_in(line[0], \
+		"TUVWabcdefghklmno.,_@#$GHIJKLMNOPQ") && \
+			line[1] == ' ' && BONUS) || (((line[0] == 'N' && \
+			line[1] == 'O') || (line[0] == 'S' && line[1] == 'O') || \
+			(line[0] == 'W' && line[1] == 'E') || (line[0] == 'E' && \
 			line[1] == 'A')) && line[2] == ' ')) //bonus ise diger karakterler!
 		return (1);
 	return (0);
@@ -26,7 +26,7 @@ int		long_condition(char *line)
 
 void	store_path1(t_data *data, char *line)
 {
-	int i;
+	int	i;
 
 	i = 2;
 	while (line[i] == ' ')
@@ -54,7 +54,7 @@ void	store_path1(t_data *data, char *line)
 
 void	store_path2(t_data *data, char *line)
 {
-	int i;
+	int	i;
 
 	i = 2;
 	while (line[i] == ' ')
@@ -82,7 +82,7 @@ void	store_path2(t_data *data, char *line)
 
 void	store_path3(t_data *data, char *line)
 {
-	int i;
+	int	i;
 
 	i = 2;
 	while (line[i] == ' ')
@@ -110,7 +110,7 @@ void	store_path3(t_data *data, char *line)
 
 void	store_path4(t_data *data, char *line)
 {
-	int i;
+	int	i;
 
 	i = 2;
 	while (line[i] == ' ')

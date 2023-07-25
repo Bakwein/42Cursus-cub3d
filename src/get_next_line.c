@@ -6,7 +6,7 @@
 /*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 03:32:36 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/07/25 23:10:40 by stunca           ###   ########.fr       */
+/*   Updated: 2023/07/25 23:51:35 by stunca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,11 @@ char	*ft_strjoin(char *s1, char *s2, t_struct *dta)
 	return (str);
 }
 
-int		get_next_line2(int fd, char **line, t_struct *dta)
+int	get_next_line2(int fd, char **line, t_struct *dta)
 {
 	while (dta->ret > 0)
 	{
-		if (ft_strlen(dta->buff + dta->curs) !=
+		if (ft_strlen(dta->buff + dta->curs) != \
 		ft_strlenn(dta->buff + dta->curs))
 		{
 			*line = ft_strjoin(*line, dta->buff + dta->curs, dta);
@@ -68,9 +68,9 @@ int		get_next_line2(int fd, char **line, t_struct *dta)
 	return (0);
 }
 
-int		get_next_line(int fd, char **line)
+int	get_next_line(int fd, char **line)
 {
-	static t_struct dta[10241];
+	static t_struct	dta[10241];
 
 	if (read(fd, dta[fd].buff, 0) < 0 || fd < 0 || fd > 10240 || line == NULL)
 		return (-1);
@@ -78,7 +78,7 @@ int		get_next_line(int fd, char **line)
 	if (!*line)
 		return (-1);
 	*line[0] = '\0';
-	if (ft_strlen(dta[fd].buff + dta[fd].curs) !=
+	if (ft_strlen(dta[fd].buff + dta[fd].curs) != \
 	ft_strlenn(dta[fd].buff + dta[fd].curs))
 	{
 		*line = ft_strjoin(*line, dta[fd].buff + dta[fd].curs, &dta[fd]);

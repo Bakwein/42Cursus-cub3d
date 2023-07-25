@@ -6,7 +6,7 @@
 /*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 17:06:22 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/07/25 23:10:55 by stunca           ###   ########.fr       */
+/*   Updated: 2023/07/25 23:46:52 by stunca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	clean_exit(int keycode, t_data *data)
 
 int	exit_free(t_data *data)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (BONUS)
@@ -46,7 +46,7 @@ int	exit_free(t_data *data)
 
 int	exit_free(t_data *data)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (BONUS)

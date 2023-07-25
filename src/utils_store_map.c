@@ -6,7 +6,7 @@
 /*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/12 12:28:23 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/07/25 23:08:47 by stunca           ###   ########.fr       */
+/*   Updated: 2023/07/25 23:48:56 by stunca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,10 +131,10 @@ void	store_info(int fd, t_data *data, char *line)
 				break ;
 		}
 		free(line);
-		if (data->security[0] == 1 && data->security[1] == 1 &&
-		data->security[2] == 1 && data->security[3] == 1 +
-		(NUM_SPRITE_BOMUS + NUM_TEXTURE_BONUS) * BONUS &&
-		data->security[4] == 1 && data->security[5] == 1 &&
+		if (data->security[0] == 1 && data->security[1] == 1 && \
+		data->security[2] == 1 && data->security[3] == 1 + \
+		(NUM_SPRITE_BOMUS + NUM_TEXTURE_BONUS) * BONUS && \
+		data->security[4] == 1 && data->security[5] == 1 && \
 		data->security[6] == 1 && data->security[7] == 1)
 			break ;
 	}

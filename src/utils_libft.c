@@ -6,7 +6,7 @@
 /*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 11:15:14 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/07/25 23:09:07 by stunca           ###   ########.fr       */
+/*   Updated: 2023/07/25 23:46:33 by stunca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_putchar(char c)
 
 void	ft_putnbr(int n)
 {
-	long nbr;
+	long	nbr;
 
 	nbr = n;
 	if (nbr < 0)
@@ -36,9 +36,9 @@ void	ft_putnbr(int n)
 		ft_putchar(nbr + '0');
 }
 
-int		ft_strncmp(char *s1, char *s2, int n)
+int	ft_strncmp(char *s1, char *s2, int n)
 {
-	int i;
+	int	i;
 
 	if (n == 0)
 		return (0);

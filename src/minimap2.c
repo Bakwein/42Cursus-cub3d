@@ -6,7 +6,7 @@
 /*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 10:53:02 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/07/25 23:10:31 by stunca           ###   ########.fr       */
+/*   Updated: 2023/07/25 23:57:38 by stunca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void	add_hud(t_data *data)
 {
-	int i;
-	int j;
-	int center_w;
-	int center_h;
+	int	i;
+	int	j;
+	int	center_w;
+	int	center_h;
 
 	i = -7;
 	j = -7;
@@ -39,7 +39,7 @@ void	add_hud(t_data *data)
 
 void	add_lifebar2(t_data *data, int i, int a, int b)
 {
-	int j;
+	int	j;
 
 	j = 0;
 	while (j < 11)
@@ -52,10 +52,10 @@ void	add_lifebar2(t_data *data, int i, int a, int b)
 
 void	add_lifebar(t_data *data)
 {
-	int i;
-	int k;
-	int a;
-	int b;
+	int	i;
+	int	k;
+	int	a;
+	int	b;
 
 	k = 0;
 	b = 10;

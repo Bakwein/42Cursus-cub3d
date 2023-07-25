@@ -6,7 +6,7 @@
 /*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 11:15:14 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/07/25 23:09:04 by stunca           ###   ########.fr       */
+/*   Updated: 2023/07/25 23:53:37 by stunca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,8 @@ void	switch_data_sprite(t_data *data, int i, int j)
 
 void	sort_sprite(t_data *data)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = -1;
 	while (++i < data->sprite_num)
@@ -58,13 +58,13 @@ void	sort_sprite(t_data *data)
 
 void	sprite_dist_calc(t_data *data)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < data->sprite_num)
 	{
-		data->sprite[i][3] = ((data->x_pos - data->sprite[i][0]) *
-		(data->x_pos - data->sprite[i][0]) + (data->y_pos - data->sprite[i][1])
+		data->sprite[i][3] = ((data->x_pos - data->sprite[i][0]) * \
+		(data->x_pos - data->sprite[i][0]) + (data->y_pos - data->sprite[i][1]) \
 		* (data->y_pos - data->sprite[i][1]));
 		i++;
 	}
@@ -72,15 +72,15 @@ void	sprite_dist_calc(t_data *data)
 
 void	init_images_mlx(t_data *data)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < 5)
 	{
-		data->text[i].img = mlx_xpm_file_to_image(data->mlx, data->text[i].path,
-		&data->text[i].width, &data->text[i].height);
-		data->text[i].add = mlx_get_data_addr(data->text[i].img,
-		&data->text[i].bits_per_pixel, &data->text[i].line_length,
+		data->text[i].img = mlx_xpm_file_to_image(data->mlx, \
+		data->text[i].path, &data->text[i].width, &data->text[i].height);
+		data->text[i].add = mlx_get_data_addr(data->text[i].img, \
+		&data->text[i].bits_per_pixel, &data->text[i].line_length, \
 		&data->text[i].endian);
 		i++;
 	}

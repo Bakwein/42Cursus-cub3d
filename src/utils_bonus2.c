@@ -6,16 +6,16 @@
 /*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/24 15:45:12 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/07/25 23:09:24 by stunca           ###   ########.fr       */
+/*   Updated: 2023/07/25 23:45:31 by stunca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
 
-int		is_in(char c, char *str)
+int	is_in(char c, char *str)
 {
-	int i;
-	int len;
+	int	i;
+	int	len;
 
 	i = 0;
 	len = ft_strlen(str);
@@ -28,9 +28,9 @@ int		is_in(char c, char *str)
 	return (0);
 }
 
-int		ft_strncmp_loc(const char *s1, const char *s2, int n)
+int	ft_strncmp_loc(const char *s1, const char *s2, int n)
 {
-	int i;
+	int	i;
 
 	if (n == 0)
 		return (0);
@@ -42,10 +42,10 @@ int		ft_strncmp_loc(const char *s1, const char *s2, int n)
 
 void	victory_exit_check(t_data *data)
 {
-	if (BONUS && (int)data->x_pos == 1 && (int)data->y_pos == 3
+	if (BONUS && (int)data->x_pos == 1 && (int)data->y_pos == 3 \
 	&& ft_strncmp_loc(data->av, "mapbonus_lvl0.cub", 18) == 0)
 		data->victory = 1;
-	if (BONUS && data->crew == 0
+	if (BONUS && data->crew == 0 \
 	&& ft_strncmp_loc(data->av, "mapbonus_the_skeld.cub", 23) == 0)
 		data->victory = 1;
 	if (data->escape == 1 || data->victory == 1)
@@ -54,7 +54,7 @@ void	victory_exit_check(t_data *data)
 
 void	search_and_replace(t_data *data, int y, int x)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	printf("Kill confirmed, %d crew members left\n", data->crew);
@@ -74,7 +74,7 @@ void	search_and_replace(t_data *data, int y, int x)
 
 void	attack_if_possible(t_data *data)
 {
-	int i;
+	int	i;
 
 	i = -1;
 	if (!BONUS)
@@ -83,13 +83,13 @@ void	attack_if_possible(t_data *data)
 	{
 		while (++i < 9)
 		{
-			if (data->map[(int)data->y_pos
+			if (data->map[(int)data->y_pos \
 			+ i % 3 - 1][(int)data->x_pos + i / 3 - 1] == '2')
 			{
 				data->crew--;
-				data->map[(int)data->y_pos
+				data->map[(int)data->y_pos \
 				+ i % 3 - 1][(int)data->x_pos + i / 3 - 1] = '0';
-				search_and_replace(data, (int)data->y_pos
+				search_and_replace(data, (int)data->y_pos \
 				+ i % 3 - 1, (int)data->x_pos + i / 3 - 1);
 				return ;
 			}

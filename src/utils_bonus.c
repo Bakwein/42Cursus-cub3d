@@ -6,7 +6,7 @@
 /*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/24 15:45:12 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/07/25 23:09:31 by stunca           ###   ########.fr       */
+/*   Updated: 2023/07/25 23:34:54 by stunca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	initialize_heart2(t_data *data, char *tab[11])
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	while (i < 11)
@@ -41,7 +41,7 @@ void	initialize_heart2(t_data *data, char *tab[11])
 
 void	initialize_heart(t_data *data)
 {
-	char *tab[11];
+	char	*tab[11];
 
 	tab[0] = "00110001100";
 	tab[1] = "01221012210";
@@ -59,7 +59,7 @@ void	initialize_heart(t_data *data)
 
 void	put_sprite_id(t_data *data)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < data->sprite_num)
@@ -87,8 +87,8 @@ void	put_sprite_id(t_data *data)
 
 void	put_heal_at_spawn(t_data *data)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	while (i < data->x_map)
@@ -111,18 +111,18 @@ void	put_heal_at_spawn(t_data *data)
 
 void	init_images_bonus(t_data *data)
 {
-	int i;
+	int	i;
 
 	if (!BONUS)
 		return ;
 	i = 5;
 	while (i < 5 + NUM_SPRITE_BOMUS + NUM_TEXTURE_BONUS)
 	{
-		data->text[i].img = mlx_xpm_file_to_image(data->mlx, data->text[i].path,
-		&data->text[i].width, &data->text[i].height);
-		data->text[i].add = mlx_get_data_addr(data->text[i].img,
-		&data->text[i].bits_per_pixel, &data->text[i].line_length,
-		&data->text[i].endian);
+		data->text[i].img = mlx_xpm_file_to_image(data->mlx, \
+			data->text[i].path, &data->text[i].width, &data->text[i].height);
+		data->text[i].add = mlx_get_data_addr(data->text[i].img, \
+			&data->text[i].bits_per_pixel, &data->text[i].line_length, \
+			&data->text[i].endian);
 		i++;
 	}
 	put_sprite_id(data);
