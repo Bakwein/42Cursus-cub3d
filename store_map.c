@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   store_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bmerchin <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 11:36:15 by bmerchin          #+#    #+#             */
-/*   Updated: 2021/02/23 11:36:17 by bmerchin         ###   ########.fr       */
+/*   Updated: 2023/07/25 14:22:36 by stunca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	store_map(int fd, t_data *data)
 	int i;
 
 	data->y_map = 0;
-	while ((retour = get_next_line(fd, &data->map[0])) == 1)
+	while ((retour = get_next_line(fd, &data->map[0])) == 1)//map kismini bulmaya calisiyor.ve nasıl önceki kaldığı yerden devam ediyor?.sanirim sadece bir kere calisir.
 	{
 		if (!BONUS)
 			ft_putstr_bn(data->map[0]);
@@ -48,7 +48,7 @@ void	store_map(int fd, t_data *data)
 			}
 			i++;
 		}
-		if (is_in(data->map[0][i], data->wl))
+		if (is_in(data->map[0][i], data->wl)) // bu neden?
 			break ;
 		free(data->map[0]);
 	}

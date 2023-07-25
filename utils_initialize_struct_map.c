@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils_initialize_struct_map.c                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bmerchin <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 15:47:55 by bmerchin          #+#    #+#             */
-/*   Updated: 2021/01/26 15:47:57 by bmerchin         ###   ########.fr       */
+/*   Updated: 2023/07/25 15:15:12 by stunca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,15 +125,15 @@ void	fill_map_one(t_data *data)
 	data->x_map = 0;
 	while (i < data->y_map)
 	{
-		if (ft_strlen(data->map[i]) > data->x_map)
-			data->x_map = ft_strlen(data->map[i]);
+		if (ft_strlen(data->map[i]) > data->x_map) // en uzun satir
+			data->x_map = ft_strlen(data->map[i]); 
 		i++;
 	}
 	i = 0;
 	while (i < data->y_map)
 	{
 		data->map[i] = str_fill(data->map[i],
-		data->x_map - ft_strlen(data->map[i]), data);
+		data->x_map - ft_strlen(data->map[i]), data); // tüm satirlar ayni uzunlukta olur ve spaceler 1 olur
 		i++;
 	}
 }

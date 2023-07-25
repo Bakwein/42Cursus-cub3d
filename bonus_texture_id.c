@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils_norme.c                                      :+:      :+:    :+:   */
+/*   bonus_texture_id.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bmerchin <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 15:04:59 by bmerchin          #+#    #+#             */
-/*   Updated: 2021/01/09 18:31:18 by bmerchin         ###   ########.fr       */
+/*   Updated: 2023/07/25 13:39:28 by stunca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int		long_condition(char *line)
 			line[1] == ' ' && BONUS) || (((line[0] == 'N' &&
 			line[1] == 'O') || (line[0] == 'S' && line[1] == 'O') ||
 			(line[0] == 'W' && line[1] == 'E') || (line[0] == 'E' &&
-			line[1] == 'A')) && line[2] == ' '))
+			line[1] == 'A')) && line[2] == ' ')) //bonus ise diger karakterler!
 		return (1);
 	return (0);
 }

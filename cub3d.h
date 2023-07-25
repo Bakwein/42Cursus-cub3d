@@ -6,7 +6,7 @@
 /*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 02:02:12 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/07/24 23:38:35 by stunca           ###   ########.fr       */
+/*   Updated: 2023/07/25 14:56:27 by stunca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,25 +88,25 @@ typedef struct	s_text {
 typedef struct	s_data
 {
 	t_text			text[50];
-	char			*av;
-	char			*wl;
-	unsigned short	x_screen_size;
-	unsigned short	y_screen_size;
-	int				floor;
-	int				ceiling;
-	char			start_dir;
-	char			*map[1024];
+	char			*av; //av[1]'i alir
+	char			*wl; // "1.,_@#$"
+	unsigned short	x_screen_size; //map genisligi
+	unsigned short	y_screen_size; //map yüksekligi
+	int				floor; //tavan rengi
+	int				ceiling;//taban rengi
+	char			start_dir; //n,s,w,e yeri
+	char			*map[1024]; //map
 	int				security[20];
 	int				save;
-	int				x_map;
-	int				y_map;
+	int				x_map;//map en uzun genislik
+	int				y_map;//map uzunluk
 	int				frame;
 	int				time;
 
 	int				x_raymap;
 	int				y_raymap;
-	double			x_pos;
-	double			y_pos;
+	double			x_pos; //mapteki x'in yeri + 0,5
+	double			y_pos; //mapteki y'nin yeri + 0,5
 	double			x_dir;
 	double			y_dir;
 	double			x_plane;

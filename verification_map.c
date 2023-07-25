@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   verification_map.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bmerchin <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/10 10:56:04 by bmerchin          #+#    #+#             */
-/*   Updated: 2021/01/12 16:17:14 by bmerchin         ###   ########.fr       */
+/*   Updated: 2023/07/25 14:48:33 by stunca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,9 +64,9 @@ void	find_wall(t_data *data, int x, int y)
 		store_sprite(data, x, y);
 	start_x = x;
 	start_y = y;
-	find_wall2(data, x, y, start_x);
+	find_wall2(data, x, y, start_x); // sağ sol
 	x = start_x;
-	while (y - 1 >= 0)
+	while (y - 1 >= 0) //üst
 	{
 		y--;
 		if (is_in(data->map[y][x], data->wl))
@@ -79,7 +79,7 @@ void	find_wall(t_data *data, int x, int y)
 		}
 	}
 	y = start_y;
-	find_wall3(data, x, y);
+	find_wall3(data, x, y); // alt
 }
 
 void	check_map2(t_data *data, int x, int y)
@@ -87,7 +87,7 @@ void	check_map2(t_data *data, int x, int y)
 	data->start_dir = data->map[y][x];
 	data->x_pos = x + 0.5;
 	data->y_pos = y + 0.5;
-	find_wall(data, x, y);
+	find_wall(data, x, y); // üst,alt,sağ,sol kontrolü icin
 	data->security[8] = data->security[8] + 1;
 }
 
@@ -106,12 +106,12 @@ void	check_map(t_data *data)
 		while (x < len)
 		{
 			if (is_in(data->map[y][x], "02")
-			|| BONUS * is_in(data->map[y][x], "j345klmno"))
-				find_wall(data, x, y);
-			else if (is_in(data->map[y][x], "NSEW"))
+			|| BONUS * is_in(data->map[y][x], "j345klmno")) //duvarsa veya j345klmno ise
+				find_wall(data, x, y); //0,2 veya spriteların solunda ve sağında,üst ve altinda mesafe farketmezsizin 1 olması lazım onun kontrolü yoksa 9 arttırılıyor
+			else if (is_in(data->map[y][x], "NSEW")) //mapteki konum
 				check_map2(data, x, y);
 			else if (data->map[y][x] != ' '
-			&& !is_in(data->map[y][x], data->wl))
+			&& !is_in(data->map[y][x], data->wl)) //wl,02 ve belirlenen sprite disinda karakter varsa
 				data->security[10] = data->security[10] + 1;
 			x++;
 		}

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   security.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bmerchin <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/12 16:03:33 by bmerchin          #+#    #+#             */
-/*   Updated: 2021/01/12 16:04:35 by bmerchin         ###   ########.fr       */
+/*   Updated: 2023/07/25 14:08:55 by stunca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	security_check(t_data *data)
 	}
 	return (0);
 }
-
+/*
 int	security_cub_av_check(char **av, t_data *data, int ac)
 {
 	if (ft_strncmp(av[2], "--save", 10) == 0 && ac == 3)
@@ -43,6 +43,7 @@ int	security_cub_av_check(char **av, t_data *data, int ac)
 	}
 	return (0);
 }
+*/
 
 int	security_cub(int ac, char **av, t_data *data, int fd)
 {
@@ -51,11 +52,14 @@ int	security_cub(int ac, char **av, t_data *data, int fd)
 
 	i = 0;
 	len = ft_strlen(av[1]);
-	data->save = 0;
+	data->save = 0; // kalkacak
 	while (i < 20)
 		data->security[i++] = 0;
-	if (ac != 2 && security_cub_av_check(av, data, ac))
+	if (ac != 2 /*&& security_cub_av_check(av, data, ac)*/) // save olayını yapiyor tekrar bakilmasi lazim
+	{
+		ft_putstr_bn("Error\nWrong number of arguments"); //bunu buraya ben ekledim. üstteki kısım kalkınca arg sayisi kontrolü icin
 		return (1);
+	}
 	if (av[1][len - 1] != 'b' || av[1][len - 2] != 'u' ||
 	av[1][len - 3] != 'c' || av[1][len - 4] != '.')
 	{
@@ -101,7 +105,7 @@ int	security_data(t_data *data)
 		if (data->security[i] > 1)
 		{
 			if (i == 3 && BONUS && data->security[i] == 1
-			+ NUM_SPRITE_BOMUS + NUM_TEXTURE_BONUS)
+			+ NUM_SPRITE_BOMUS + NUM_TEXTURE_BONUS) // 3:sprite+S
 				;
 			else
 			{

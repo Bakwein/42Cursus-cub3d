@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils_color.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bmerchin <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 15:04:59 by bmerchin          #+#    #+#             */
-/*   Updated: 2021/01/09 18:31:18 by bmerchin         ###   ########.fr       */
+/*   Updated: 2023/07/25 13:05:50 by stunca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	get_b(int i)
 	return (i % 256);
 }
 
-int	store_color(int i, int j, int k, int l)
+int	store_color(int i, int j, int k, int l)  // bu fonk biraz sacma i'yi 0 gönderiyor. Gereksiz uğraşmış gibi xD
 {
 	int color;
 

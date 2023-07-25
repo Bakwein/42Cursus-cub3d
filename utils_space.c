@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils_space.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bmerchin <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 15:04:59 by bmerchin          #+#    #+#             */
-/*   Updated: 2021/01/09 18:31:18 by bmerchin         ###   ########.fr       */
+/*   Updated: 2023/07/25 13:00:40 by stunca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	store_fc2(char c, int *i, unsigned short *red)
 {
 	if (c == ',')
 		(*i)++;
-	else
+	else // bu neden? -> ÖNCKEİ FONKSİYONDA BUNU GEÇTİKTEN SONRA KONTROL KISMINDA PATLAMASI İÇİN
 	{
 		(*i)--;
 		*red = 1000;
