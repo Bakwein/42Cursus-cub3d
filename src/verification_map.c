@@ -6,11 +6,11 @@
 /*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/10 10:56:04 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/07/25 22:20:19 by stunca           ###   ########.fr       */
+/*   Updated: 2023/07/25 23:08:42 by stunca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "../cub3d.h"
 
 void	find_wall2(t_data *data, int x, int y, int start_x)
 {

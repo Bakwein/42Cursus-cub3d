@@ -6,11 +6,11 @@
 /*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/12 16:03:33 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/07/25 14:08:55 by stunca           ###   ########.fr       */
+/*   Updated: 2023/07/25 23:10:01 by stunca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "../cub3d.h"
 
 int	security_check(t_data *data)
 {

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   utils_raycasting.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bmerchin <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 11:52:54 by bmerchin          #+#    #+#             */
-/*   Updated: 2021/02/23 11:52:55 by bmerchin         ###   ########.fr       */
+/*   Updated: 2023/07/25 23:08:57 by stunca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "../cub3d.h"
 
 void	raycasting_initialize2(t_data *data)
 {

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   put_column_image.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bmerchin <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 11:23:58 by bmerchin          #+#    #+#             */
-/*   Updated: 2021/02/23 11:23:59 by bmerchin         ###   ########.fr       */
+/*   Updated: 2023/07/25 23:10:24 by stunca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "../cub3d.h"
 
 void	determine_id_bonus(t_data *data, int *id)
 {

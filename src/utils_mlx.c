@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   utils_mlx.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bmerchin <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 11:15:14 by bmerchin          #+#    #+#             */
-/*   Updated: 2021/02/23 11:15:15 by bmerchin         ###   ########.fr       */
+/*   Updated: 2023/07/25 23:09:04 by stunca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "../cub3d.h"
 
 void	ft_mlx_pixel_put(t_data *data, int x, int y, int color)
 {

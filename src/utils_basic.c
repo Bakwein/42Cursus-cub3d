@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   utils_basic.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bmerchin <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 12:37:22 by bmerchin          #+#    #+#             */
-/*   Updated: 2021/01/09 18:54:26 by bmerchin         ###   ########.fr       */
+/*   Updated: 2023/07/25 23:10:11 by stunca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "../cub3d.h"
 
 void	ft_putstr_bn(char *str)
 {

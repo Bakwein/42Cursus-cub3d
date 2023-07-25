@@ -6,11 +6,11 @@
 /*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 11:05:36 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/07/25 22:19:57 by stunca           ###   ########.fr       */
+/*   Updated: 2023/07/25 23:08:37 by stunca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "../cub3d.h"
 
 void	open_then_read(char *str, t_data *data)
 {

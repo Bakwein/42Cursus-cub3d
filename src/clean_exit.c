@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   clean_exit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bmerchin <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 17:06:22 by bmerchin          #+#    #+#             */
-/*   Updated: 2021/02/23 17:07:10 by bmerchin         ###   ########.fr       */
+/*   Updated: 2023/07/25 23:10:55 by stunca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "../cub3d.h"
 
 int	clean_exit(int keycode, t_data *data)
 {

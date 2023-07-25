@@ -6,11 +6,11 @@
 /*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/12 12:28:23 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/07/25 14:05:03 by stunca           ###   ########.fr       */
+/*   Updated: 2023/07/25 23:08:47 by stunca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "../cub3d.h"
 
 void	store_fc(t_data *data, int i, char *line)
 {

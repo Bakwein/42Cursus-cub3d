@@ -6,11 +6,11 @@
 /*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 21:35:28 by stunca            #+#    #+#             */
-/*   Updated: 2023/07/25 22:19:25 by stunca           ###   ########.fr       */
+/*   Updated: 2023/07/25 23:09:18 by stunca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "../cub3d.h"
 
 void	end_names(char *tab[])
 {

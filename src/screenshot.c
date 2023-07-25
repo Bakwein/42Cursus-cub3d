@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   screenshot.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bmerchin <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 11:07:48 by bmerchin          #+#    #+#             */
-/*   Updated: 2021/02/23 11:07:49 by bmerchin         ###   ########.fr       */
+/*   Updated: 2023/07/25 23:10:21 by stunca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "../cub3d.h"
 
 void	bmp_top_info(t_data *data, int fd)
 {

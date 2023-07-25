@@ -6,11 +6,11 @@
 /*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 11:36:15 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/07/25 14:22:36 by stunca           ###   ########.fr       */
+/*   Updated: 2023/07/25 23:10:08 by stunca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "../cub3d.h"
 
 void	store_map2(int fd, t_data *data, int retour)
 {
