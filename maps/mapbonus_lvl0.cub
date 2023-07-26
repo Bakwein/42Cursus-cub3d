@@ -1,4 +1,4 @@
-R 800 500
+R 800 600
 NO ./texture/darker_wall.xpm
 SO ./texture/door_wall.xpm
 WE ./texture/normal_wall.xpm

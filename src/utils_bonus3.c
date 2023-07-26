@@ -6,7 +6,7 @@
 /*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/24 15:45:12 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/07/25 23:09:21 by stunca           ###   ########.fr       */
+/*   Updated: 2023/07/26 15:10:32 by stunca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void	echo_the_end(t_data *data)
 	{
 		printf("Good Game! Your final score is %d frames. ", data->frame);
 		printf("You can try again to get a lower time.\n");
-		if (ft_strncmp_loc(data->av, "mapbonus_lvl0.cub", 18) == 0)
+		if (ft_strncmp_loc(data->av, "maps/mapbonus_lvl0.cub", 23) == 0)
 			printf("Congratulations, Green was the Impostor.\n");
 	}
 	data->v_bool_print_score = 1;

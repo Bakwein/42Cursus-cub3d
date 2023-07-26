@@ -6,7 +6,7 @@
 /*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/10 10:56:04 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/07/25 23:41:11 by stunca           ###   ########.fr       */
+/*   Updated: 2023/07/26 14:37:47 by stunca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,16 +91,18 @@ int	render_next_frame(t_data *data)
 void	run_mlx(t_data *data)
 {
 	data->mlx = mlx_init();
-	if (data->save == 0)
+	if (data->save == 0) // bu silinecek
 	{
 		screen_resize(data); // bu kalkacak şimdilik bıraktım
 		data->win = mlx_new_window(data->mlx, data->x_screen_size, \
 		data->y_screen_size, "cub3D - stunca&hsozan");
 		mlx_loop_hook(data->mlx, render_next_frame, data);
-		mlx_hook(data->win, 2, 1L << 0, ft_key_hook, data);
-		mlx_hook(data->win, 3, 1L << 1, ft_key_unhook, data);
-		if (LINUX)
-			mlx_hook(data->win, 33, 1L << 5, exit_free, data);
+		mlx_hook(data->win, 2, 1L << 0, ft_key_hook, data); // 02	KeyPress -(1L<<0)	KeyPressMask
+		mlx_hook(data->win, 3, 1L << 1, ft_key_unhook, data); //03	KeyRelease-(1L<<1)	KeyReleaseMask
+		if (LINUX) // BURASİ KALKACAK ama yine de şimdilik kalsın dedim
+			mlx_hook(data->win, 33, 1L << 5, exit_free, data); //  33	ClientMessage- (1L<<5)	LeaveWindowMask
+		else
+			mlx_hook(data->win, 17, 0, exit_free, data); //burayı ben ekledim çünkü sol üstteki x'e basinca macde exit yapmıyordu
 	}
 	data->img = mlx_new_image(data->mlx, data->x_screen_size, \
 		data->y_screen_size);
@@ -111,6 +113,23 @@ void	run_mlx(t_data *data)
 		render_next_frame(data);
 	mlx_loop(data->mlx);
 }
+/*
+void mlx_hook(mlx_win_list_t *win_ptr, int x_event, int x_mask, int (*f)(), void *param)
+win_ptr-> window pointer
+x_event -> x11 event
+x_mas-> x11 mask
+int (*f)() -> function
+Bu işlev, bir pencereye bir olay akışı bağlamak için kullanılır.
+
+
+
+mlx_loop_hook(data->mlx, render_next_frame, data);
+ Olay döngüsü çalıştığı sürece tekrar tekrar çağrılacak bir işlevi kaydetmek için kullanılır. render_next_frame işlevi, tipik olarak bir grafik uygulamanın sonraki karesini işlemek için kullanılan bir işlevdir.
+
+
+mlx_loop(data->mlx);
+bir pencere için grafik kullanıcı arayüzü (GUI) döngüsünü çalıştırır. Bu işlev, pencereye bir olay geldiğinde ilgili olayları işleyen ve ardından yeni bir olay beklemeye başlayan sonsuz bir döngü oluşturur.
+*/
 
 int	main(int ac, char **av)
 {
