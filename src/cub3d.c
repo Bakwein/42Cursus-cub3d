@@ -6,7 +6,7 @@
 /*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/10 10:56:04 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/07/26 14:37:47 by stunca           ###   ########.fr       */
+/*   Updated: 2023/07/29 12:20:08 by stunca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,12 @@ int	render_next_frame(t_data *data)
 		add_minimap_and_company(data);
 	data->frame++;
 	open_door(data);
+	if(BONUS && data->mouse_flag == 1)
+		mlx_mouse_hide();
+	else if(BONUS && data->mouse_flag == 0)
+		mlx_mouse_show();
+	if(BONUS && data->mouse_flag)
+		mouse_move(data);
 	if (data->frame % 40 > 19)
 		data->time = 1;
 	else
@@ -101,7 +107,7 @@ void	run_mlx(t_data *data)
 		mlx_hook(data->win, 3, 1L << 1, ft_key_unhook, data); //03	KeyRelease-(1L<<1)	KeyReleaseMask
 		if (LINUX) // BURASİ KALKACAK ama yine de şimdilik kalsın dedim
 			mlx_hook(data->win, 33, 1L << 5, exit_free, data); //  33	ClientMessage- (1L<<5)	LeaveWindowMask
-		else
+		else // BURASI KALACAK
 			mlx_hook(data->win, 17, 0, exit_free, data); //burayı ben ekledim çünkü sol üstteki x'e basinca macde exit yapmıyordu
 	}
 	data->img = mlx_new_image(data->mlx, data->x_screen_size, \

@@ -6,7 +6,7 @@
 /*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 02:02:12 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/07/25 22:43:00 by stunca           ###   ########.fr       */
+/*   Updated: 2023/07/29 12:20:42 by stunca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ typedef struct	s_struct
 #  define KEY_ESCAPE 53
 #  define KEY_SPRINT 126
 #  define KEY_DOOR 40
+#  define KEY_MOUSE 49
 #  define KEY_ATTACK 257
 #  define MACOS 1
 #  define LINUX 0
@@ -139,6 +140,8 @@ typedef struct	s_data
 
 	int				forward;
 	int				sprint;
+	int				mouse_flag;
+	int				mouse_center_flag;
 	int				backward;
 	int				right;
 	int				left;
@@ -175,6 +178,9 @@ typedef struct	s_data
 	int				y_tex;
 	int				x_texture;
 	int				y_texture;
+
+	int				mouse_x;
+	int				mouse_y;
 }				t_data;
 
 int				get_next_line(int fd, char **line);
@@ -212,6 +218,7 @@ void			check_map(t_data *data);
 void			set_vector_dir(t_data *data);
 void			fill_map_one(t_data *data);
 
+int 			ft_key_hook2(int keycode, t_data *data);
 int				ft_key_hook(int keycode, t_data *data);
 int				ft_key_unhook(int keycode, t_data *data);
 
@@ -273,5 +280,9 @@ void			store_path4(t_data *data, char *line);
 void			set_vector_dir_extension(t_data *data);
 void			store_fc2(char c, int *i, unsigned short *red);
 void			multiple_empty_lines(t_data *data);
+
+void 			mouse_move_1(t_data *data);
+void 			mouse_move_2(t_data *data);
+void			mouse_move(t_data *data);
 
 #endif

@@ -6,11 +6,23 @@
 /*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 10:02:34 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/07/26 15:22:51 by stunca           ###   ########.fr       */
+/*   Updated: 2023/07/29 12:16:09 by stunca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
+
+int ft_key_hook2(int keycode, t_data *data)
+{
+	if (keycode == KEY_DOOR && BONUS) //40-k
+		close_door(data);
+	if(keycode == KEY_MOUSE && BONUS && data->mouse_flag == 0)
+		data->mouse_flag = 1;
+	else if(keycode == KEY_MOUSE && BONUS && \
+		data->mouse_flag == 1)
+		data->mouse_flag = 0;
+	return (0);
+}
 
 int	ft_key_hook(int keycode, t_data *data)
 {
@@ -36,8 +48,7 @@ int	ft_key_hook(int keycode, t_data *data)
 		printf("You have still %d frames of cooldown left\n", data->attack);
 	if (keycode == KEY_SPRINT && BONUS) //126-yön tusu ust
 		data->sprint = 1;
-	if (keycode == KEY_DOOR && BONUS) //40-k
-		close_door(data);
+	ft_key_hook2(keycode, data);
 	return (0);
 }
 

@@ -31,9 +31,8 @@ SRC = 	src/bonus_texture_id.c \
 		src/utils_space.c \
 		src/utils_store_map.c \
 		src/verification_map.c \
-		src/verification_texture.c 
-
-
+		src/verification_texture.c \
+		src/mouse.c
 
 INCLUDES=./
 

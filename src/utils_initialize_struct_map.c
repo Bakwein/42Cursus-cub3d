@@ -6,7 +6,7 @@
 /*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 15:47:55 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/07/25 23:59:45 by stunca           ###   ########.fr       */
+/*   Updated: 2023/07/29 11:59:56 by stunca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void	initialize_struct2(t_data *data)
 	data->time = 0;
 	data->life = 30;
 	data->sprint = 0;
+	data->mouse_flag = 0;
 	data->door_closed = 0;
 	data->v_bool_print_score = 0;
 	if (!BONUS)
