@@ -6,7 +6,7 @@
 /*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/10 10:56:04 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/07/29 12:20:08 by stunca           ###   ########.fr       */
+/*   Updated: 2023/07/29 14:08:05 by stunca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -155,7 +155,7 @@ int	main(int ac, char **av)
 	check_map(&data);
 	if (security_check(&data) == 1)
 		return (free_struct(&data, 1));
-	fill_map_one(&data);
+	fill_map_one(&data); // tüm satirin uzunluklarini esitler bos yerlere 1
 	texture_check(&data);
 	if (data.security[11] == 1)
 		return (free_struct(&data, 1));

@@ -6,13 +6,13 @@
 /*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 11:36:15 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/07/25 23:58:18 by stunca           ###   ########.fr       */
+/*   Updated: 2023/07/29 14:02:15 by stunca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
 
-void	store_map2(int fd, t_data *data, int retour)
+void	store_map2(int fd, t_data *data, int retour) // haritayı burada alıyor
 {
 	while ((retour = get_next_line(fd, &data->map[data->y_map])) == 1 || \
 	data->map[data->y_map][0] != '\0')
@@ -48,7 +48,7 @@ void	store_map(int fd, t_data *data)
 			}
 			i++;
 		}
-		if (is_in(data->map[0][i], data->wl)) // bu neden?
+		if (is_in(data->map[0][i], data->wl)) // bu sanirim hiç harita yoksa hata vermesi için
 			break ;
 		free(data->map[0]);
 	}

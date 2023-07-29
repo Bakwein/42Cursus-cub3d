@@ -6,7 +6,7 @@
 /*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 02:02:12 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/07/29 12:20:42 by stunca           ###   ########.fr       */
+/*   Updated: 2023/07/29 14:14:02 by stunca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -256,7 +256,7 @@ void			initialize_heart(t_data *data);
 
 void			heal_at_spawn(t_data *data);
 void			initialize_the_end(t_data *data);
-void  end_names(char *tab[]);
+void  			end_names(char *tab[]);
 void			echo_the_end(t_data *data);
 
 int				is_in(char c, char *str);

@@ -6,7 +6,7 @@
 /*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/12 13:48:47 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/07/25 23:32:53 by stunca           ###   ########.fr       */
+/*   Updated: 2023/07/29 14:03:01 by stunca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ void	print_map(t_data *data)
 void	store_sprite(t_data *data, int x, int y)
 {
 	data->sprite_num++;
-	if (data->map[y][x] == '2')
+	if (data->map[y][x] == '2') // 2 ise crewmate
 		data->crew++;
 	if (data->sprite_num > 499)
 		return ;

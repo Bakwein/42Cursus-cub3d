@@ -6,7 +6,7 @@
 /*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 15:47:55 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/07/29 11:59:56 by stunca           ###   ########.fr       */
+/*   Updated: 2023/07/29 14:19:14 by stunca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ void	initialize_struct2(t_data *data)
 	j = 0;
 	while (i < 500)
 	{
-		if (data->map[(int)data->sprite[i][1]][(int)data->sprite[i][0]] == '2')
+		if (data->map[(int)data->sprite[i][1]][(int)data->sprite[i][0]] == '2') // crewmate ise
 		{
-			data->sprite[i][4] = (j * 2 + 22) % 12;
+			data->sprite[i][4] = (j * 2 + 22) % 12; // crewmate sprite id ama NEDEN 12 : sanırım 12 tane crewmate sprite'ı var. ??????? 
 			j++;
 		}
 		i++;

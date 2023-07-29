@@ -6,7 +6,7 @@
 /*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/10 10:56:04 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/07/25 23:57:04 by stunca           ###   ########.fr       */
+/*   Updated: 2023/07/29 14:06:28 by stunca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void	find_wall(t_data *data, int x, int y)
 		store_sprite(data, x, y);
 	start_x = x;
 	start_y = y;
-	find_wall2(data, x, y, start_x); // sağ sol
+	find_wall2(data, x, y, start_x); // sağ sol wall kontrolü
 	x = start_x;
 	while (y - 1 >= 0) //üst
 	{
@@ -111,11 +111,11 @@ void	check_map(t_data *data)
 			else if (is_in(data->map[y][x], "NSEW")) //mapteki konum
 				check_map2(data, x, y);
 			else if (data->map[y][x] != ' '
-			&& !is_in(data->map[y][x], data->wl)) //wl,02 ve belirlenen sprite disinda karakter varsa
+			&& !is_in(data->map[y][x], data->wl)) //wl,02 ve üstte belirlenen sprite disinda karakter varsa
 				data->security[10] = data->security[10] + 1;
 			x++;
 		}
 		y++;
 	}
-	multiple_empty_lines(data);
+	multiple_empty_lines(data); //sonda çok boş satır varsa
 }

@@ -6,7 +6,7 @@
 /*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/24 15:45:12 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/07/26 15:04:35 by stunca           ###   ########.fr       */
+/*   Updated: 2023/07/29 14:32:39 by stunca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,9 @@ void	victory_exit_check(t_data *data)
 	if (BONUS && data->crew == 0 \
 	&& ft_strncmp_loc(data->av, "maps/mapbonus_the_skeld.cub", 28) == 0) // son mapte yaşayan kalmayınca
 		data->victory = 1;
+	if(BONUS && data->crew == 0 && \
+	ft_strncmp_loc(data->av, "maps/mapbonus_among_us.cub", 27) == 0) //  yaşayan kalmayınca
+		data->victory = 1;
 	if (data->escape == 1 || data->victory == 1) //espace->esc
 		exit_free(data);
 }
@@ -65,7 +68,7 @@ void	search_and_replace(t_data *data, int y, int x)
 	{
 		if ((int)data->sprite[i][0] == x && (int)data->sprite[i][1] == y)
 		{
-			data->sprite[i][4] += 1;
+			data->sprite[i][4] += 1; // id bir artar ölü olan renderlanır
 			return ;
 		}
 		i++;
