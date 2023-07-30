@@ -1,5 +1,5 @@
 name=cub3d
-
+bname=cub3d_bonus
 # Path: srcs/
 
 SRC = 	src/bonus_texture_id.c \
@@ -36,21 +36,33 @@ SRC = 	src/bonus_texture_id.c \
 
 INCLUDES=./
 
+obj= $(SRC:.c=.o)
+
 all: $(name)
 
+bonus: $(bname)
+
 $(name):
-	@gcc -Wall -Wextra -Werror -D BONUS=1 $(SRC) mlx/libmlx.a -I . -Lmlx -framework OpenGL -framework AppKit -o $(name)
-	@echo "cub3d compiled successfully ! 🎉"	
+	@gcc -Wall -Wextra -Werror $(SRC) mlx/libmlx.a -I . -Lmlx -framework OpenGL -framework AppKit -o $(name)
+	@echo "cub3d compiled successfully ! 🎉"
+$(bname):
+	@gcc -Wall -Wextra -Werror -D BONUS=1 $(SRC) mlx/libmlx.a -I . -Lmlx -framework OpenGL -framework AppKit -o $(bname)
+	@echo "cub3d_bonus compiled successfully ! 🎉"
 #silent minilibx compilation
 mlx:
 	@make --silent -C mlx
 
 clean:
-	@rm -rf obj
+	@rm -rf object
+	@rm -rf object_bonus
 
 
 fclean: clean
 	@rm -rf $(name)
-
+	@rm -rf $(bname)
 
 re: fclean all
+
+reb: fclean bonus
+
+.PHONY: all clean fclean re bonus mlx

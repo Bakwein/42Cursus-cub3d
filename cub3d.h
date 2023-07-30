@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
+/*   By: hsozan <hsozan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 02:02:12 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/07/29 14:14:02 by stunca           ###   ########.fr       */
+/*   Updated: 2023/07/30 15:52:17 by hsozan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,8 @@ typedef struct	s_struct
 # define ROTATION_SPEED 0.03
 # define NUM_SPRITE_BOMUS 28
 # define NUM_TEXTURE_BONUS 6
-
+# define SCREEN_WIDTH 1920
+# define SCREEN_HEIGHT 1080
 # ifdef __linux__
 #  define KEY_FORWARD 119
 #  define KEY_BACKWARD 115

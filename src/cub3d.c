@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
+/*   By: hsozan <hsozan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/10 10:56:04 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/07/29 14:08:05 by stunca           ###   ########.fr       */
+/*   Updated: 2023/07/30 15:15:51 by hsozan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,9 +81,7 @@ int	render_next_frame(t_data *data)
 		add_minimap_and_company(data);
 	data->frame++;
 	open_door(data);
-	if(BONUS && data->mouse_flag == 1)
-		mlx_mouse_hide();
-	else if(BONUS && data->mouse_flag == 0)
+	if(BONUS && data->mouse_flag == 0)
 		mlx_mouse_show();
 	if(BONUS && data->mouse_flag)
 		mouse_move(data);
@@ -97,26 +95,18 @@ int	render_next_frame(t_data *data)
 void	run_mlx(t_data *data)
 {
 	data->mlx = mlx_init();
-	if (data->save == 0) // bu silinecek
-	{
-		screen_resize(data); // bu kalkacak şimdilik bıraktım
-		data->win = mlx_new_window(data->mlx, data->x_screen_size, \
-		data->y_screen_size, "cub3D - stunca&hsozan");
-		mlx_loop_hook(data->mlx, render_next_frame, data);
-		mlx_hook(data->win, 2, 1L << 0, ft_key_hook, data); // 02	KeyPress -(1L<<0)	KeyPressMask
-		mlx_hook(data->win, 3, 1L << 1, ft_key_unhook, data); //03	KeyRelease-(1L<<1)	KeyReleaseMask
-		if (LINUX) // BURASİ KALKACAK ama yine de şimdilik kalsın dedim
-			mlx_hook(data->win, 33, 1L << 5, exit_free, data); //  33	ClientMessage- (1L<<5)	LeaveWindowMask
-		else // BURASI KALACAK
-			mlx_hook(data->win, 17, 0, exit_free, data); //burayı ben ekledim çünkü sol üstteki x'e basinca macde exit yapmıyordu
-	}
+	screen_resize(data);
+	data->win = mlx_new_window(data->mlx, data->x_screen_size, \
+	data->y_screen_size, "cub3D - stunca&hsozan");
+	mlx_loop_hook(data->mlx, render_next_frame, data);
+	mlx_hook(data->win, 2, 1L << 0, ft_key_hook, data);
+	mlx_hook(data->win, 3, 1L << 1, ft_key_unhook, data);
+	mlx_hook(data->win, 17, 1L << 5, exit_free, data); 
 	data->img = mlx_new_image(data->mlx, data->x_screen_size, \
 		data->y_screen_size);
 	data->addr = mlx_get_data_addr(data->img, \
 		&data->bits_per_pixel, &data->line_length, &data->endian);
 	init_images_mlx(data);
-	if (data->save == 1)
-		render_next_frame(data);
 	mlx_loop(data->mlx);
 }
 /*
