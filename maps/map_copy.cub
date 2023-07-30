@@ -1,4 +1,4 @@
-R 700 500
+
 NO ./texture/greystone.xpm
 SO ./texture/eagle.xpm
 WE ./texture/purplestone.xpm

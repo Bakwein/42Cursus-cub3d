@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils_store_map.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
+/*   By: hsozan <hsozan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/12 12:28:23 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/07/25 23:48:56 by stunca           ###   ########.fr       */
+/*   Updated: 2023/07/30 15:52:51 by hsozan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,15 +45,10 @@ void	store_rfc(t_data *data, char *line)
 	int i;
 
 	i = 1;
-	if (line[0] == 'R') // R ise boyutu ayarlar
-	{
-		data->x_screen_size = ft_atoi_parsing(line, &i);
-		data->y_screen_size = ft_atoi_parsing(line, &i);
-		if (line[i] != '\0') // iki atoiden sonra artik i'nin nulla ulasmasi gerekir
-			data->security[0] += 1;
-		data->security[0] += 1;
-	}
-	else
+	data->x_screen_size = SCREEN_WIDTH;
+	data->y_screen_size = SCREEN_HEIGHT;
+	data->security[0] = 1;
+	if (line[0] == 'F' || line[0] == 'C')
 		store_fc(data, i, line); //f,c ve i=1
 }
 
@@ -121,7 +116,7 @@ void	store_info(int fd, t_data *data, char *line)
 	{
 		if (!BONUS)
 			ft_putstr_bn(line); //bonus degilse satiri yazdirir
-		if (is_in(line[0], "RFC") && line[1] == ' ') //tüm satirlarda ilk karakter R,F,C ve harf sonrasi space kontrolü
+		if (is_in(line[0], "FC") && line[1] == ' ') //tüm satirlarda ilk karakter R,F,C ve harf sonrasi space kontrolü
 			store_rfc(data, line);
 		else if (long_condition(line)) // sprite,eşya karakterleri harici bir şey var mı kontrolü
 			store_path(data, line);
