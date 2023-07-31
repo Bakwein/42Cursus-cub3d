@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils_parsing.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
+/*   By: hsozan <hsozan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/12 13:48:47 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/07/29 14:03:01 by stunca           ###   ########.fr       */
+/*   Updated: 2023/07/31 14:34:34 by hsozan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ int	free_struct(t_data *data, int m)
 		while (++i <= data->y_map)
 			free(data->map[i]);
 	}
+	close(data->fd);
 	return (0);
 }
 

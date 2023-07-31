@@ -6,7 +6,7 @@
 /*   By: hsozan <hsozan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/12 16:03:33 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/07/30 13:14:08 by hsozan           ###   ########.fr       */
+/*   Updated: 2023/07/31 14:09:21 by hsozan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,16 @@ int	security_cub_av_check(char **av, t_data *data, int ac)
 }
 */
 
-int	security_cub(int ac, char **av, t_data *data, int fd)
+void fd_check(int fd)
+{
+	if (fd < 0)
+	{
+		ft_putstr_bn("Error\nYour map file doesn't exist");
+		exit(0);
+	}
+}
+
+int	security_cub(int ac, char **av, t_data *data)
 {
 	int	i;
 	int	len;
@@ -64,11 +73,6 @@ int	security_cub(int ac, char **av, t_data *data, int fd)
 	av[1][len - 3] != 'c' || av[1][len - 4] != '.')
 	{
 		ft_putstr_bn("Error\nYour map fomat must be .cub");
-		return (1);
-	}
-	if (fd < 0)
-	{
-		ft_putstr_bn("Error\nOpen Folder, wrong map");
 		return (1);
 	}
 	return (0);
@@ -105,8 +109,8 @@ int	security_data(t_data *data)
 		if (data->security[i] > 1)
 		{
 			if (i == 3 && BONUS && data->security[i] == 1 \
-			+ NUM_SPRITE_BOMUS + NUM_TEXTURE_BONUS) // 3:sprite+S
-				;
+			+ NUM_SPRITE_BOMUS + NUM_TEXTURE_BONUS)
+				continue ;
 			else
 			{
 				ft_putstr_bn("Error\nBad data in the first part");

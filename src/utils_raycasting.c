@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils_raycasting.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
+/*   By: hsozan <hsozan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 11:52:54 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/07/25 23:36:15 by stunca           ###   ########.fr       */
+/*   Updated: 2023/07/31 16:20:18 by hsozan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,23 +48,13 @@ void	raycasting_initialize(t_data *data, int *i)
 	data->x_raymap = (int)data->x_pos;
 	data->y_raymap = (int)data->y_pos;
 	if (data->x_ray_dir == 0)
-		data->x_delta_dist = 1000000;
+		data->x_delta_dist = 1;
 	else
-	{
-		if (data->x_ray_dir == 0)
-			data->x_delta_dist = 1;
-		else
-			data->x_delta_dist = fabs(1 / data->x_ray_dir);
-	}
+		data->x_delta_dist = fabs(1 / data->x_ray_dir);
 	if (data->y_ray_dir == 0)
-		data->y_delta_dist = 1000000;
+		data->y_delta_dist = 1;
 	else
-	{
-		if (data->y_ray_dir == 0)
-			data->y_delta_dist = 1;
-		else
-			data->y_delta_dist = fabs(1 / data->y_ray_dir);
-	}
+		data->y_delta_dist = fabs(1 / data->y_ray_dir);
 	raycasting_initialize2(data);
 }
 

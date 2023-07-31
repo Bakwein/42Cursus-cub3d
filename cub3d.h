@@ -6,7 +6,7 @@
 /*   By: hsozan <hsozan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 02:02:12 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/07/30 15:52:17 by hsozan           ###   ########.fr       */
+/*   Updated: 2023/07/31 14:33:04 by hsozan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -182,6 +182,8 @@ typedef struct	s_data
 
 	int				mouse_x;
 	int				mouse_y;
+
+	int				fd;
 }				t_data;
 
 int				get_next_line(int fd, char **line);
@@ -201,7 +203,7 @@ int				get_t(int i);
 int				get_r(int i);
 int				get_g(int i);
 int				get_b(int i);
-int				store_color(int i, int j, int k, int l);
+int				store_color(int i, int j, int k);
 
 void			store_info(int fd, t_data *data, char *line);
 
@@ -211,9 +213,10 @@ void			print_map(t_data *data);
 void			store_sprite(t_data *data, int x, int y);
 
 int				security_check(t_data *data);
-int				security_cub(int ac, char **av, t_data *data, int fd);
+int				security_cub(int ac, char **av, t_data *data);
 int				security_data(t_data *data);
 
+void			fd_check(int fd);
 void			check_map(t_data *data);
 
 void			set_vector_dir(t_data *data);
@@ -285,5 +288,6 @@ void			multiple_empty_lines(t_data *data);
 void 			mouse_move_1(t_data *data);
 void 			mouse_move_2(t_data *data);
 void			mouse_move(t_data *data);
+void			handle_mouse(t_data *data);
 
 #endif

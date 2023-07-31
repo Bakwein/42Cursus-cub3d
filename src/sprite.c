@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sprite.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
+/*   By: hsozan <hsozan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 13:05:13 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/07/26 00:06:06 by stunca           ###   ########.fr       */
+/*   Updated: 2023/07/31 16:43:56 by hsozan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@ void	sprite2(t_data *data, int i)
 {
 	data->x_sprite = data->sprite[i][0] - data->x_pos;
 	data->y_sprite = data->sprite[i][1] - data->y_pos;
-	data->matrice = \
-	1 / (data->x_plane * data->y_dir - data->x_dir * data->y_plane);
+	data->matrice = 1 / (data->x_plane * data->y_dir - data->x_dir * data->y_plane);
 	data->x_trans = data->matrice * \
 	(data->y_dir * data->x_sprite - data->x_dir * data->y_sprite);
 	data->y_trans = data->matrice * \

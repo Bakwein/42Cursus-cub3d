@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils_initialize_struct_map.c                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
+/*   By: hsozan <hsozan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 15:47:55 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/07/29 14:19:14 by stunca           ###   ########.fr       */
+/*   Updated: 2023/07/31 16:43:54 by hsozan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,18 @@ void	set_vector_dir(t_data *data)
 	intialize_struct(data);
 }
 
+static int	str_fill_helper(char *new, t_data *data)
+{
+	if (!new)
+	{
+		printf("Error\nMalloc failed\n");
+		data->security[11] = 1;
+		return (0);
+	}
+	else
+		return (1);
+}
+
 char	*str_fill(char *str, int len, t_data *data)
 {
 	int		i;
@@ -97,12 +109,9 @@ char	*str_fill(char *str, int len, t_data *data)
 
 	i = 0;
 	j = -1;
-	if (!(new = malloc(sizeof(char) * (ft_strlen(str) + len + 1))))
-	{
-		data->security[11] = 1;
-		ft_putstr_bn("Error\nA malloc failed");
+	new = malloc(sizeof(char) * (ft_strlen(str) + len + 1));
+	if (!str_fill_helper(new, data))
 		return (str);
-	}
 	while (str[i])
 	{
 		if (str[i] == ' ')
@@ -134,7 +143,7 @@ void	fill_map_one(t_data *data)
 	while (i < data->y_map)
 	{
 		data->map[i] = str_fill(data->map[i],
-		data->x_map - ft_strlen(data->map[i]), data); // tüm satirlar ayni uzunlukta olur ve spaceler 1 olur
+		data->x_map - ft_strlen(data->map[i]), data);
 		i++;
 	}
 }

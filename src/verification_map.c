@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   verification_map.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
+/*   By: hsozan <hsozan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/10 10:56:04 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/07/29 14:06:28 by stunca           ###   ########.fr       */
+/*   Updated: 2023/07/31 15:02:00 by hsozan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,7 @@ void	check_map(t_data *data)
 			else if (is_in(data->map[y][x], "NSEW")) //mapteki konum
 				check_map2(data, x, y);
 			else if (data->map[y][x] != ' '
-			&& !is_in(data->map[y][x], data->wl)) //wl,02 ve üstte belirlenen sprite disinda karakter varsa
+			&& !is_in(data->map[y][x], data->wl))
 				data->security[10] = data->security[10] + 1;
 			x++;
 		}

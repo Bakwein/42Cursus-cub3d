@@ -6,7 +6,7 @@
 /*   By: hsozan <hsozan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 10:02:34 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/07/30 15:19:35 by hsozan           ###   ########.fr       */
+/*   Updated: 2023/07/31 15:14:56 by hsozan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	ft_key_hook(int keycode, t_data *data)
 	if (keycode == KEY_ESCAPE) // 53-esc
 		data->escape = 1;
 	if (keycode == KEY_ATTACK && BONUS && data->attack == 0) //257-shift
-		data->attack = 300;
+		data->attack = 30;
 	else if (keycode == KEY_ATTACK && BONUS) //cooldown
 		printf("You have still %d frames of cooldown left\n", data->attack);
 	if (keycode == KEY_SPRINT && BONUS) //126-yön tusu ust

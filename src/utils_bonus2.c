@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils_bonus2.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
+/*   By: hsozan <hsozan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/24 15:45:12 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/07/29 14:32:39 by stunca           ###   ########.fr       */
+/*   Updated: 2023/07/31 15:14:54 by hsozan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ void	attack_if_possible(t_data *data)
 	i = -1;
 	if (!BONUS)
 		return ;
-	if (data->attack == 300)
+	if (data->attack == 30)
 	{
 		while (++i < 9)
 		{

@@ -6,7 +6,7 @@
 /*   By: hsozan <hsozan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/10 10:56:04 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/07/30 15:15:51 by hsozan           ###   ########.fr       */
+/*   Updated: 2023/07/31 14:35:27 by hsozan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,10 +81,7 @@ int	render_next_frame(t_data *data)
 		add_minimap_and_company(data);
 	data->frame++;
 	open_door(data);
-	if(BONUS && data->mouse_flag == 0)
-		mlx_mouse_show();
-	if(BONUS && data->mouse_flag)
-		mouse_move(data);
+	handle_mouse(data);
 	if (data->frame % 40 > 19)
 		data->time = 1;
 	else
@@ -129,19 +126,19 @@ bir pencere için grafik kullanıcı arayüzü (GUI) döngüsünü çalıştır�
 
 int	main(int ac, char **av)
 {
-	int		fd;
 	char	*line;
 	t_data	data;
 
 	line = NULL;
-	fd = open(av[1], O_RDONLY);
 	data.av = av[1];
-	if (security_cub(ac, av, &data, fd) == 1)
+	if (security_cub(ac, av, &data) == 1)
 		return (0);
-	store_info(fd, &data, line);
+	data.fd = open(av[1], O_RDONLY);
+	fd_check(data.fd);
+	store_info(data.fd, &data, line);
 	if (security_data(&data) == 1)
 		return (free_struct(&data, 0));
-	store_map(fd, &data);
+	store_map(data.fd, &data);
 	check_map(&data);
 	if (security_check(&data) == 1)
 		return (free_struct(&data, 1));
@@ -149,9 +146,7 @@ int	main(int ac, char **av)
 	texture_check(&data);
 	if (data.security[11] == 1)
 		return (free_struct(&data, 1));
-	print_info(&data);
 	set_vector_dir(&data);
-	print_map(&data);
 	run_mlx(&data);
 	return (free_struct(&data, 1));
 }

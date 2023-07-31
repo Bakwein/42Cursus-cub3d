@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bonus_texture_id.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
+/*   By: hsozan <hsozan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 15:04:59 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/07/25 23:39:39 by stunca           ###   ########.fr       */
+/*   Updated: 2023/07/31 14:03:23 by hsozan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	long_condition(char *line)
 			line[1] == ' ' && BONUS) || (((line[0] == 'N' && \
 			line[1] == 'O') || (line[0] == 'S' && line[1] == 'O') || \
 			(line[0] == 'W' && line[1] == 'E') || (line[0] == 'E' && \
-			line[1] == 'A')) && line[2] == ' ')) //bonus ise diger karakterler!
+			line[1] == 'A')) && line[2] == ' '))
 		return (1);
 	return (0);
 }

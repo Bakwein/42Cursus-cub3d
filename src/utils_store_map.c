@@ -6,7 +6,7 @@
 /*   By: hsozan <hsozan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/12 12:28:23 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/07/30 15:52:51 by hsozan           ###   ########.fr       */
+/*   Updated: 2023/07/31 14:09:27 by hsozan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	store_fc(t_data *data, int i, char *line)
 	red = ft_atoi_parsing(line, &i); //i artiyor
 	store_fc2(line[i], &i, &red);
 	green = ft_atoi_parsing(line, &i); //i artiyor
-	store_fc2(line[i], &i, &red); // Bu biraz saçma ama mesela yeşilde de aynı sorun olursa kirmiziyi 1000 yapacağından alttaki kisimda zaten hata verecek
+	store_fc2(line[i], &i, &green); // Bu biraz saçma ama mesela yeşilde de aynı sorun olursa kirmiziyi 1000 yapacağından alttaki kisimda zaten hata verecek
 	blue = ft_atoi_parsing(line, &i); //i artiyor
 	if (line[i] != '\0') // blue atoi sonrasi i. index null olmali yoksa hata vermesi için 1k
 		blue = 1000;
@@ -30,12 +30,12 @@ void	store_fc(t_data *data, int i, char *line)
 		data->security[1] += 2; // hata varsa +2, yoksa +1
 	if (line[0] == 'F')
 	{
-		data->floor = store_color(0, red, green, blue);
+		data->floor = store_color(red, green, blue);
 		data->security[1] += 1;
 	}
 	else
 	{
-		data->ceiling = store_color(0, red, green, blue);
+		data->ceiling = store_color(red, green, blue);
 		data->security[2] += 1;
 	}
 }
@@ -93,7 +93,6 @@ void	store_path(t_data *data, char *line)
 		data->text[4].path = ft_strdup(&line[i]);
 		data->security[3] += 1;
 	}
-	// bonus için TUVWabcdefghklmno.,_@#$GHIJKLMNOPQ kontrolü
 	else if ((is_in(line[0], "GTHUIVJWK")) && line[1] == ' ')
 		store_path1(data, line);
 	else if ((is_in(line[0], "aLbMcNdOe")) && line[1] == ' ')
@@ -103,26 +102,22 @@ void	store_path(t_data *data, char *line)
 	else if ((is_in(line[0], "o.,_@#$")) && line[1] == ' ')
 		store_path4(data, line);
 	else
-		store_nswe(data, line); //NO,SO,WE,EA
+		store_nswe(data, line);
 }
 
 void	store_info(int fd, t_data *data, char *line)
 {
-	int retour;
-
 	data->sprite_num = 0;
 	data->wl = "1.,_@#$";
-	while ((retour = get_next_line(fd, &line)) == 1) // GET_NEXT_LINE KARIŞIK VE FARKLI!!!!!!!!!
+	while (get_next_line(fd, &line) == 1)
 	{
-		if (!BONUS)
-			ft_putstr_bn(line); //bonus degilse satiri yazdirir
-		if (is_in(line[0], "FC") && line[1] == ' ') //tüm satirlarda ilk karakter R,F,C ve harf sonrasi space kontrolü
+		if (is_in(line[0], "FC") && line[1] == ' ')
 			store_rfc(data, line);
-		else if (long_condition(line)) // sprite,eşya karakterleri harici bir şey var mı kontrolü
+		else if (long_condition(line))
 			store_path(data, line);
 		else
 		{
-			if (line[0] != 0) //(?) dosya sonunda break için. NASIL BİLMİYORUM AMA MAP'E KADAR OKUYOR.
+			if (line[0] != 0)
 				break ;
 		}
 		free(line);
