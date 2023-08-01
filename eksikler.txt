@@ -1,25 +1,8 @@
-LEAKS!!!!!!!!!!!!!!!!!!!!
-
 mapin sol üstüneki çarpıya basıldığında tam olarak kapanmiyor!!!!!!!!!!! - YAPTIM AMA SON KONTROL LAZİM
-
-
-norminette sorunu var!!!!
 
 get_next_line zor xd 
 
-şu bonus =1, = 0 kısmı farklı yapılabilir mi?
-
-utils_initialize_struct_map.c'deki str_fill fonksiyonunda security 11, ayrica texture check için verification_map.c'de open_the_read fonksiyonu security'si de 11
-
-
-halloldu//normalde .cublarda en başta olan R kismi yok. sorun olur mu?
-
-
 utils_bonus3.c'deki echo_the_end kismini degistirdim
-
-
-mouse yapildi lakin hide'la ne kadar saniye geçerse space'e tekrar basıldığında mouse'un geri gelmesi için o kadar beklemek gerekiyor.BUNA ÇÖZÜM LAZİM. tek flag kurtarmadi.
-
 ...
 maplerin av'si kontrol edilen yerlerde maps/ eklenme zorunda
 

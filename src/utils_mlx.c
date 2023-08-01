@@ -6,7 +6,7 @@
 /*   By: hsozan <hsozan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 11:15:14 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/07/31 16:28:15 by hsozan           ###   ########.fr       */
+/*   Updated: 2023/08/01 23:07:38 by hsozan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_mlx_pixel_put(t_data *data, int x, int y, int color)
 	char	*dst;
 
 	dst = data->addr + (y * data->line_length + x * 4);
-	*(unsigned int*)dst = color;
+	*(unsigned int *)dst = color;
 }
 
 void	switch_data_sprite(t_data *data, int i, int j)

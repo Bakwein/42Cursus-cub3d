@@ -6,7 +6,7 @@
 /*   By: hsozan <hsozan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 17:06:22 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/07/31 15:11:05 by hsozan           ###   ########.fr       */
+/*   Updated: 2023/08/01 22:39:26 by hsozan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,6 @@ int	exit_free(t_data *data)
 	}
 	if (data->save == 0)
 		mlx_destroy_window(data->mlx, data->win);
-	free(data->mlx);
 	exit(0);
 }
 

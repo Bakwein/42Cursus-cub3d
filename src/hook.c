@@ -6,7 +6,7 @@
 /*   By: hsozan <hsozan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 10:02:34 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/07/31 15:14:56 by hsozan           ###   ########.fr       */
+/*   Updated: 2023/08/01 22:53:21 by hsozan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_key_hook2(int keycode, t_data *data)
 {
-	if (keycode == KEY_DOOR && BONUS) //40-k
+	if (keycode == KEY_DOOR && BONUS)
 		close_door(data);
 	if (keycode == KEY_MOUSE && BONUS && data->mouse_flag == 0)
 		data->mouse_flag = 1;
@@ -26,27 +26,27 @@ int	ft_key_hook2(int keycode, t_data *data)
 
 int	ft_key_hook(int keycode, t_data *data)
 {
-	if (keycode == KEY_FORWARD) //13-w
+	if (keycode == KEY_FORWARD)
 		data->forward = 1;
-	if (keycode == KEY_BACKWARD) //1-s
+	if (keycode == KEY_BACKWARD)
 		data->backward = 1;
-	if (keycode == KEY_RIGHT) //2-d
+	if (keycode == KEY_RIGHT)
 		data->right = 1;
-	if (keycode == KEY_LEFT) //0-a
+	if (keycode == KEY_LEFT)
 		data->left = 1;
-	if (keycode == KEY_TURN_LEFT) //124-yön tusu sag
+	if (keycode == KEY_TURN_LEFT)
 		data->turn_left = 1;
-	if (keycode == KEY_TURN_RIGHT) // 123-yön tusu sol
+	if (keycode == KEY_TURN_RIGHT)
 		data->turn_right = 1;
-	if (keycode == KEY_CROUCH && BONUS) //8-c
+	if (keycode == KEY_CROUCH && BONUS)
 		data->crouch = -30;
-	if (keycode == KEY_ESCAPE) // 53-esc
+	if (keycode == KEY_ESCAPE)
 		data->escape = 1;
-	if (keycode == KEY_ATTACK && BONUS && data->attack == 0) //257-shift
+	if (keycode == KEY_ATTACK && BONUS && data->attack == 0)
 		data->attack = 30;
-	else if (keycode == KEY_ATTACK && BONUS) //cooldown
+	else if (keycode == KEY_ATTACK && BONUS)
 		printf("You have still %d frames of cooldown left\n", data->attack);
-	if (keycode == KEY_SPRINT && BONUS) //126-yön tusu ust
+	if (keycode == KEY_SPRINT && BONUS)
 		data->sprint = 1;
 	ft_key_hook2(keycode, data);
 	return (0);

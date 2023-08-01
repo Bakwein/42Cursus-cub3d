@@ -6,7 +6,7 @@
 /*   By: hsozan <hsozan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/12 16:03:33 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/07/31 14:09:21 by hsozan           ###   ########.fr       */
+/*   Updated: 2023/08/01 22:56:18 by hsozan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	security_cub_av_check(char **av, t_data *data, int ac)
 }
 */
 
-void fd_check(int fd)
+void	fd_check(int fd)
 {
 	if (fd < 0)
 	{
@@ -53,6 +53,7 @@ void fd_check(int fd)
 		exit(0);
 	}
 }
+//if (ac != 2 && security_cub_av_check(av, data, ac)) bak!!!
 
 int	security_cub(int ac, char **av, t_data *data)
 {
@@ -61,12 +62,12 @@ int	security_cub(int ac, char **av, t_data *data)
 
 	i = 0;
 	len = ft_strlen(av[1]);
-	data->save = 0; // kalkacak
+	data->save = 0;
 	while (i < 20)
 		data->security[i++] = 0;
-	if (ac != 2 /*&& security_cub_av_check(av, data, ac)*/) // save olayını yapiyor tekrar bakilmasi lazim
+	if (ac != 2)
 	{
-		ft_putstr_bn("Error\nWrong number of arguments"); //bunu buraya ben ekledim. üstteki kısım kalkınca arg sayisi kontrolü icin
+		ft_putstr_bn("Error\nWrong number of arguments");
 		return (1);
 	}
 	if (av[1][len - 1] != 'b' || av[1][len - 2] != 'u' ||

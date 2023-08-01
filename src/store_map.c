@@ -6,13 +6,13 @@
 /*   By: hsozan <hsozan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 11:36:15 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/07/31 14:23:04 by hsozan           ###   ########.fr       */
+/*   Updated: 2023/08/01 22:59:46 by hsozan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
 
-void	store_map2(int fd, t_data *data) // haritayı burada alıyor
+void	store_map2(int fd, t_data *data)
 {
 	while ((get_next_line(fd, &data->map[data->y_map])) == 1 || \
 	data->map[data->y_map][0] != '\0')
@@ -43,7 +43,7 @@ void	store_map(int fd, t_data *data)
 			}
 			i++;
 		}
-		if (is_in(data->map[0][i], data->wl)) // bu sanirim hiç harita yoksa hata vermesi için
+		if (is_in(data->map[0][i], data->wl))
 			break ;
 		free(data->map[0]);
 	}

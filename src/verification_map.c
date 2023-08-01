@@ -6,7 +6,7 @@
 /*   By: hsozan <hsozan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/10 10:56:04 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/07/31 15:02:00 by hsozan           ###   ########.fr       */
+/*   Updated: 2023/08/01 23:55:36 by hsozan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,9 +64,9 @@ void	find_wall(t_data *data, int x, int y)
 		store_sprite(data, x, y);
 	start_x = x;
 	start_y = y;
-	find_wall2(data, x, y, start_x); // sağ sol wall kontrolü
+	find_wall2(data, x, y, start_x);
 	x = start_x;
-	while (y - 1 >= 0) //üst
+	while (y - 1 >= 0)
 	{
 		y--;
 		if (is_in(data->map[y][x], data->wl))
@@ -79,7 +79,7 @@ void	find_wall(t_data *data, int x, int y)
 		}
 	}
 	y = start_y;
-	find_wall3(data, x, y); // alt
+	find_wall3(data, x, y);
 }
 
 void	check_map2(t_data *data, int x, int y)
@@ -87,7 +87,7 @@ void	check_map2(t_data *data, int x, int y)
 	data->start_dir = data->map[y][x];
 	data->x_pos = x + 0.5;
 	data->y_pos = y + 0.5;
-	find_wall(data, x, y); // üst,alt,sağ,sol kontrolü icin
+	find_wall(data, x, y);
 	data->security[8] = data->security[8] + 1;
 }
 
@@ -106,9 +106,9 @@ void	check_map(t_data *data)
 		while (x < len)
 		{
 			if (is_in(data->map[y][x], "02")
-			|| BONUS * is_in(data->map[y][x], "j345klmno")) //duvarsa veya j345klmno ise
-				find_wall(data, x, y); //0,2 veya spriteların solunda ve sağında,üst ve altinda mesafe farketmezsizin 1 olması lazım onun kontrolü yoksa 9 arttırılıyor
-			else if (is_in(data->map[y][x], "NSEW")) //mapteki konum
+			|| BONUS * is_in(data->map[y][x], "j345klmno"))
+				find_wall(data, x, y);
+			else if (is_in(data->map[y][x], "NSEW"))
 				check_map2(data, x, y);
 			else if (data->map[y][x] != ' '
 			&& !is_in(data->map[y][x], data->wl))
@@ -117,5 +117,5 @@ void	check_map(t_data *data)
 		}
 		y++;
 	}
-	multiple_empty_lines(data); //sonda çok boş satır varsa
+	multiple_empty_lines(data);
 }

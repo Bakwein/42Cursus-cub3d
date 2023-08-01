@@ -6,7 +6,7 @@
 /*   By: hsozan <hsozan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/10 10:56:04 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/07/31 14:35:27 by hsozan           ###   ########.fr       */
+/*   Updated: 2023/08/01 22:41:49 by hsozan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,8 @@ void	run_mlx(t_data *data)
 	mlx_loop(data->mlx);
 }
 /*
-void mlx_hook(mlx_win_list_t *win_ptr, int x_event, int x_mask, int (*f)(), void *param)
+void mlx_hook(mlx_win_list_t *win_ptr, \
+int x_event, int x_mask, int (*f)(), void *param)
 win_ptr-> window pointer
 x_event -> x11 event
 x_mas-> x11 mask
@@ -117,11 +118,15 @@ Bu işlev, bir pencereye bir olay akışı bağlamak için kullanılır.
 
 
 mlx_loop_hook(data->mlx, render_next_frame, data);
- Olay döngüsü çalıştığı sürece tekrar tekrar çağrılacak bir işlevi kaydetmek için kullanılır. render_next_frame işlevi, tipik olarak bir grafik uygulamanın sonraki karesini işlemek için kullanılan bir işlevdir.
+ Olay döngüsü çalıştığı sürece tekrar tekrar çağrılacak bir işlevi \
+  kaydetmek için kullanılır. render_next_frame işlevi, tipik olarak \
+  bir grafik uygulamanın sonraki karesini işlemek için kullanılan bir işlevdir.
 
 
 mlx_loop(data->mlx);
-bir pencere için grafik kullanıcı arayüzü (GUI) döngüsünü çalıştırır. Bu işlev, pencereye bir olay geldiğinde ilgili olayları işleyen ve ardından yeni bir olay beklemeye başlayan sonsuz bir döngü oluşturur.
+bir pencere için grafik kullanıcı arayüzü (GUI) döngüsünü çalıştırır. \
+Bu işlev, pencereye bir olay geldiğinde ilgili olayları işleyen ve \
+ardından yeni bir olay beklemeye başlayan sonsuz bir döngü oluşturur.
 */
 
 int	main(int ac, char **av)
@@ -142,7 +147,7 @@ int	main(int ac, char **av)
 	check_map(&data);
 	if (security_check(&data) == 1)
 		return (free_struct(&data, 1));
-	fill_map_one(&data); // tüm satirin uzunluklarini esitler bos yerlere 1
+	fill_map_one(&data);
 	texture_check(&data);
 	if (data.security[11] == 1)
 		return (free_struct(&data, 1));

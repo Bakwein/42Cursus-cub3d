@@ -6,7 +6,7 @@
 /*   By: hsozan <hsozan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 15:47:55 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/07/31 16:43:54 by hsozan           ###   ########.fr       */
+/*   Updated: 2023/08/01 23:04:06 by hsozan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ void	initialize_struct2(t_data *data)
 	j = 0;
 	while (i < 500)
 	{
-		if (data->map[(int)data->sprite[i][1]][(int)data->sprite[i][0]] == '2') // crewmate ise
+		if (data->map[(int)data->sprite[i][1]][(int)data->sprite[i][0]] == '2')
 		{
-			data->sprite[i][4] = (j * 2 + 22) % 12; // crewmate sprite id ama NEDEN 12 : sanırım 12 tane crewmate sprite'ı var. ??????? 
+			data->sprite[i][4] = (j * 2 + 22) % 12; 
 			j++;
 		}
 		i++;
@@ -87,63 +87,4 @@ void	set_vector_dir(t_data *data)
 	}
 	set_vector_dir_extension(data);
 	intialize_struct(data);
-}
-
-static int	str_fill_helper(char *new, t_data *data)
-{
-	if (!new)
-	{
-		printf("Error\nMalloc failed\n");
-		data->security[11] = 1;
-		return (0);
-	}
-	else
-		return (1);
-}
-
-char	*str_fill(char *str, int len, t_data *data)
-{
-	int		i;
-	int		j;
-	char	*new;
-
-	i = 0;
-	j = -1;
-	new = malloc(sizeof(char) * (ft_strlen(str) + len + 1));
-	if (!str_fill_helper(new, data))
-		return (str);
-	while (str[i])
-	{
-		if (str[i] == ' ')
-			new[i] = '1';
-		else
-			new[i] = str[i];
-		i++;
-	}
-	while (++j < len)
-		new[i + j] = '1';
-	new[i + j] = '\0';
-	free(str);
-	return (new);
-}
-
-void	fill_map_one(t_data *data)
-{
-	int i;
-
-	i = 0;
-	data->x_map = 0;
-	while (i < data->y_map)
-	{
-		if (ft_strlen(data->map[i]) > data->x_map) // en uzun satir
-			data->x_map = ft_strlen(data->map[i]); 
-		i++;
-	}
-	i = 0;
-	while (i < data->y_map)
-	{
-		data->map[i] = str_fill(data->map[i],
-		data->x_map - ft_strlen(data->map[i]), data);
-		i++;
-	}
 }

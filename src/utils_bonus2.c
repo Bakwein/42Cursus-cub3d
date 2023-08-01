@@ -6,7 +6,7 @@
 /*   By: hsozan <hsozan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/24 15:45:12 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/07/31 15:14:54 by hsozan           ###   ########.fr       */
+/*   Updated: 2023/08/01 23:00:44 by hsozan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,15 +43,15 @@ int	ft_strncmp_loc(const char *s1, const char *s2, int n)
 void	victory_exit_check(t_data *data)
 {
 	if (BONUS && (int)data->x_pos == 1 && (int)data->y_pos == 3 \
-	&& ft_strncmp_loc(data->av, "maps/mapbonus_lvl0.cub", 23) == 0) // öldüren kişiyi yakalama
+	&& ft_strncmp_loc(data->av, "maps/mapbonus_lvl0.cub", 23) == 0)
 		data->victory = 1;
 	if (BONUS && data->crew == 0 \
-	&& ft_strncmp_loc(data->av, "maps/mapbonus_the_skeld.cub", 28) == 0) // son mapte yaşayan kalmayınca
+	&& ft_strncmp_loc(data->av, "maps/mapbonus_the_skeld.cub", 28) == 0)
 		data->victory = 1;
-	if(BONUS && data->crew == 0 && \
-	ft_strncmp_loc(data->av, "maps/mapbonus_among_us.cub", 27) == 0) //  yaşayan kalmayınca
+	if (BONUS && data->crew == 0 && \
+	ft_strncmp_loc(data->av, "maps/mapbonus_among_us.cub", 27) == 0)
 		data->victory = 1;
-	if (data->escape == 1 || data->victory == 1) //espace->esc
+	if (data->escape == 1 || data->victory == 1)
 		exit_free(data);
 }
 
@@ -68,7 +68,7 @@ void	search_and_replace(t_data *data, int y, int x)
 	{
 		if ((int)data->sprite[i][0] == x && (int)data->sprite[i][1] == y)
 		{
-			data->sprite[i][4] += 1; // id bir artar ölü olan renderlanır
+			data->sprite[i][4] += 1;
 			return ;
 		}
 		i++;

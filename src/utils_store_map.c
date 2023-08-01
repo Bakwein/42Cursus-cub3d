@@ -6,7 +6,7 @@
 /*   By: hsozan <hsozan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/12 12:28:23 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/07/31 14:09:27 by hsozan           ###   ########.fr       */
+/*   Updated: 2023/08/01 23:54:02 by hsozan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,16 @@ void	store_fc(t_data *data, int i, char *line)
 	unsigned short	green;
 	unsigned short	blue;
 
-	red = ft_atoi_parsing(line, &i); //i artiyor
+	red = ft_atoi_parsing(line, &i);
 	store_fc2(line[i], &i, &red);
-	green = ft_atoi_parsing(line, &i); //i artiyor
-	store_fc2(line[i], &i, &green); // Bu biraz saçma ama mesela yeşilde de aynı sorun olursa kirmiziyi 1000 yapacağından alttaki kisimda zaten hata verecek
-	blue = ft_atoi_parsing(line, &i); //i artiyor
-	if (line[i] != '\0') // blue atoi sonrasi i. index null olmali yoksa hata vermesi için 1k
+	green = ft_atoi_parsing(line, &i);
+	store_fc2(line[i], &i, &green);
+	blue = ft_atoi_parsing(line, &i);
+	if (line[i] != '\0')
 		blue = 1000;
-	if (red < 0 || green < 0 || blue < 0 ||
-	red > 255 || green > 255 || blue > 255)
-		data->security[1] += 2; // hata varsa +2, yoksa +1
+	if (red < 0 || green < 0 || blue < 0 
+		|| red > 255 || green > 255 || blue > 255)
+		data->security[1] += 2;
 	if (line[0] == 'F')
 	{
 		data->floor = store_color(red, green, blue);
@@ -42,19 +42,19 @@ void	store_fc(t_data *data, int i, char *line)
 
 void	store_rfc(t_data *data, char *line)
 {
-	int i;
+	int	i;
 
 	i = 1;
 	data->x_screen_size = SCREEN_WIDTH;
 	data->y_screen_size = SCREEN_HEIGHT;
 	data->security[0] = 1;
 	if (line[0] == 'F' || line[0] == 'C')
-		store_fc(data, i, line); //f,c ve i=1
+		store_fc(data, i, line);
 }
 
 void	store_nswe(t_data *data, char *line)
 {
-	int i;
+	int	i;
 
 	i = 3;
 	while (line[i] == ' ')
@@ -83,7 +83,7 @@ void	store_nswe(t_data *data, char *line)
 
 void	store_path(t_data *data, char *line)
 {
-	int i;
+	int	i;
 
 	if (line[0] == 'S' && line[1] == ' ')
 	{

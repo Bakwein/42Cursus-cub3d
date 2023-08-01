@@ -32,7 +32,8 @@ SRC = 	src/bonus_texture_id.c \
 		src/utils_store_map.c \
 		src/verification_map.c \
 		src/verification_texture.c \
-		src/mouse.c
+		src/mouse.c \
+		src/str_fill.c
 
 INCLUDES=./
 
@@ -42,10 +43,10 @@ all: $(name)
 
 bonus: $(bname)
 
-$(name):
+$(name): mlx
 	@gcc -Wall -Wextra -Werror $(SRC) mlx/libmlx.a -I . -Lmlx -framework OpenGL -framework AppKit -o $(name)
 	@echo "cub3d compiled successfully ! 🎉"
-$(bname):
+$(bname): mlx
 	@gcc -Wall -Wextra -Werror -D BONUS=1 $(SRC) mlx/libmlx.a -I . -Lmlx -framework OpenGL -framework AppKit -o $(bname)
 	@echo "cub3d_bonus compiled successfully ! 🎉"
 #silent minilibx compilation
@@ -60,6 +61,7 @@ clean:
 fclean: clean
 	@rm -rf $(name)
 	@rm -rf $(bname)
+	@make --silent -C mlx clean
 
 re: fclean all
 

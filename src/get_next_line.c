@@ -6,7 +6,7 @@
 /*   By: hsozan <hsozan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 03:32:36 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/07/31 13:21:46 by hsozan           ###   ########.fr       */
+/*   Updated: 2023/08/01 22:49:26 by hsozan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,11 @@ char	*ft_strjoin(char *s1, char *s2, t_struct *dta)
 	j = 0;
 	if (!s1 || !s2)
 		return (NULL);
-	if (!(str = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlenn(s2) + 1))))
+	str = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlenn(s2) + 1));
+	if (!str)
 		return (free_null(s1));
-	while (s1[i])
-	{
+	while (s1[i] && i++)
 		str[i] = s1[i];
-		i++;
-	}
 	while (s2[j] != '\n' && s2[j] != '\0')
 	{
 		str[i + j] = s2[j];
