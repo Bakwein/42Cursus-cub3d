@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils_initialize_struct_map.c                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hsozan <hsozan@student.42.fr>              +#+  +:+       +#+        */
+/*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 15:47:55 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/08/01 23:04:06 by hsozan           ###   ########.fr       */
+/*   Updated: 2023/08/03 18:54:34 by stunca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	initialize_struct2(t_data *data)
 	{
 		if (data->map[(int)data->sprite[i][1]][(int)data->sprite[i][0]] == '2')
 		{
-			data->sprite[i][4] = (j * 2 + 22) % 12; 
+			data->sprite[i][4] = (j * 2) % 24;
 			j++;
 		}
 		i++;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils_raycasting.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hsozan <hsozan@student.42.fr>              +#+  +:+       +#+        */
+/*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 11:52:54 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/08/03 15:44:32 by hsozan           ###   ########.fr       */
+/*   Updated: 2023/08/03 19:28:58 by stunca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,11 +48,11 @@ void	raycasting_initialize(t_data *data, int *i)
 	data->x_raymap = (int)data->x_pos;
 	data->y_raymap = (int)data->y_pos;
 	if (data->x_ray_dir == 0)
-		data->x_delta_dist = 10000000;
+		data->x_delta_dist = fabs(1 / 0.0000001);
 	else
 		data->x_delta_dist = fabs(1 / data->x_ray_dir);
 	if (data->y_ray_dir == 0)
-		data->y_delta_dist = 10000000;
+		data->y_delta_dist = fabs(1 / 0.0000001);
 	else
 		data->y_delta_dist = fabs(1 / data->y_ray_dir);
 	raycasting_initialize2(data);
