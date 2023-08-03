@@ -6,7 +6,7 @@
 /*   By: hsozan <hsozan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/10 10:56:04 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/08/03 12:59:04 by hsozan           ###   ########.fr       */
+/*   Updated: 2023/08/03 15:34:30 by hsozan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,6 @@ void	raycasting_calculation(t_data *data)
 	sprite_dist_calc(data);
 	sort_sprite(data);
 	sprite(data);
-	save_image(data);
 }
 
 int	render_next_frame(t_data *data)
@@ -91,7 +90,6 @@ int	render_next_frame(t_data *data)
 void	run_mlx(t_data *data)
 {
 	data->mlx = mlx_init();
-	screen_resize(data);
 	data->win = mlx_new_window(data->mlx, data->x_screen_size, \
 	data->y_screen_size, "cub3D - stunca&hsozan");
 	mlx_loop_hook(data->mlx, render_next_frame, data);

@@ -13,7 +13,6 @@ SRC = 	src/bonus_texture_id.c \
 		src/minimap2.c \
 		src/moving.c \
 		src/put_column_image.c \
-		src/screenshot.c \
 		src/security.c \
 		src/sprite.c \
 		src/store_map.c \
@@ -46,7 +45,6 @@ BSRC = 	bonus/src/bonus_texture_id.c \
 		bonus/src/minimap2.c \
 		bonus/src/moving.c \
 		bonus/src/put_column_image.c \
-		bonus/src/screenshot.c \
 		bonus/src/security.c \
 		bonus/src/sprite.c \
 		bonus/src/store_map.c \

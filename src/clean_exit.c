@@ -6,7 +6,7 @@
 /*   By: hsozan <hsozan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 17:06:22 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/08/01 22:39:26 by hsozan           ###   ########.fr       */
+/*   Updated: 2023/08/03 15:32:33 by hsozan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,7 @@ int	exit_free(t_data *data)
 		mlx_destroy_image(data->mlx, data->text[i].img);
 		i++;
 	}
-	if (data->save == 0)
-		mlx_destroy_window(data->mlx, data->win);
+	mlx_destroy_window(data->mlx, data->win);
 	exit(0);
 }
 
