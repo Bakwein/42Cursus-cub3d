@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils_bonus2.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hsozan <hsozan@student.42.fr>              +#+  +:+       +#+        */
+/*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/24 15:45:12 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/08/01 23:00:44 by hsozan           ###   ########.fr       */
+/*   Updated: 2023/08/03 15:00:18 by stunca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void	search_and_replace(t_data *data, int y, int x)
 	{
 		if ((int)data->sprite[i][0] == x && (int)data->sprite[i][1] == y)
 		{
-			data->sprite[i][4] += 1;
+			data->sprite[i][4] = 100;
 			return ;
 		}
 		i++;
