@@ -6,7 +6,7 @@
 /*   By: hsozan <hsozan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/12 16:03:33 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/08/03 12:57:42 by hsozan           ###   ########.fr       */
+/*   Updated: 2023/08/01 22:56:18 by hsozan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,19 @@ int	security_check(t_data *data)
 	}
 	return (0);
 }
+/*
+int	security_cub_av_check(char **av, t_data *data, int ac)
+{
+	if (ft_strncmp(av[2], "--save", 10) == 0 && ac == 3)
+		data->save = 1;
+	else
+	{
+		ft_putstr_bn("Error\nWrong number of arguments");
+		return (1);
+	}
+	return (0);
+}
+*/
 
 void	fd_check(int fd)
 {
@@ -107,5 +120,5 @@ int	security_data(t_data *data)
 			}
 		}
 	}
-	return (0);
+	return (security_data_extension(data));
 }

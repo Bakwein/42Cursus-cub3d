@@ -6,7 +6,7 @@
 /*   By: hsozan <hsozan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/10 10:56:04 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/08/03 12:59:04 by hsozan           ###   ########.fr       */
+/*   Updated: 2023/08/01 22:41:49 by hsozan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,8 @@ void	raycasting_calculation(t_data *data)
 
 int	render_next_frame(t_data *data)
 {
-	mlx_put_image_to_window(data->mlx, data->win, data->img, 0, 0);
+	if (data->save == 0)
+		mlx_put_image_to_window(data->mlx, data->win, data->img, 0, 0);
 	victory_exit_check(data);
 	if (data->life == 0)
 	{

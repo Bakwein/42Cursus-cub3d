@@ -6,14 +6,14 @@
 /*   By: hsozan <hsozan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 02:02:12 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/08/03 12:47:46 by hsozan           ###   ########.fr       */
+/*   Updated: 2023/08/03 12:50:51 by hsozan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CUB3D_H
 # define CUB3D_H
 
-# include "mlx/mlx.h"
+# include "../mlx/mlx.h"
 # include <stddef.h>
 # include <stdlib.h>
 # include <unistd.h>
@@ -157,6 +157,7 @@ typedef struct s_data
 	int				v_bool_print_score;
 	int				heart[11][11];
 	int				the_end[19][36];
+
 	int				sprite_num;
 	double			sprite[1001][5];
 	double			buff[20000];
@@ -258,7 +259,7 @@ void			initialize_heart(t_data *data);
 
 void			heal_at_spawn(t_data *data);
 void			initialize_the_end(t_data *data);
-void			end_names(char	*tab[]);
+void			end_names(char *tab[]);
 void			echo_the_end(t_data *data);
 
 int				is_in(char c, char *str);
