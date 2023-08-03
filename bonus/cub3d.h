@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hsozan <hsozan@student.42.fr>              +#+  +:+       +#+        */
+/*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 02:02:12 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/08/03 15:56:45 by hsozan           ###   ########.fr       */
+/*   Updated: 2023/08/03 18:13:59 by stunca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,6 +140,7 @@ typedef struct s_data
 	int				heart[11][11];
 	int				the_end[19][36];
 
+
 	int				sprite_num;
 	double			sprite[1001][5];
 	double			buff[20000];
@@ -193,6 +194,8 @@ int				free_struct(t_data *data, int m);
 void			print_map(t_data *data);
 void			store_sprite(t_data *data, int x, int y);
 
+void			turn_left(t_data *data);
+void			turn_right(t_data *data);
 int				security_check(t_data *data);
 int				security_cub(int ac, char **av, t_data *data);
 int				security_data(t_data *data);
@@ -263,8 +266,6 @@ void			set_vector_dir_extension(t_data *data);
 void			store_fc2(char c, int *i, unsigned short *red);
 void			multiple_empty_lines(t_data *data);
 
-void			mouse_move_1(t_data *data);
-void			mouse_move_2(t_data *data);
 void			mouse_move(t_data *data);
 void			handle_mouse(t_data *data);
 

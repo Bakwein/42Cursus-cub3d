@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hsozan <hsozan@student.42.fr>              +#+  +:+       +#+        */
+/*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 02:02:12 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/08/03 15:56:21 by hsozan           ###   ########.fr       */
+/*   Updated: 2023/08/03 18:16:05 by stunca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -266,8 +266,8 @@ void			set_vector_dir_extension(t_data *data);
 void			store_fc2(char c, int *i, unsigned short *red);
 void			multiple_empty_lines(t_data *data);
 
-void			mouse_move_1(t_data *data);
-void			mouse_move_2(t_data *data);
+void			turn_left(t_data *data);
+void			turn_right(t_data *data);
 void			mouse_move(t_data *data);
 void			handle_mouse(t_data *data);
 
