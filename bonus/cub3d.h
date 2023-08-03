@@ -6,7 +6,7 @@
 /*   By: hsozan <hsozan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 02:02:12 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/08/03 12:50:51 by hsozan           ###   ########.fr       */
+/*   Updated: 2023/08/03 15:56:45 by hsozan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,21 +39,6 @@ typedef struct s_struct
 # define NUM_TEXTURE_BONUS 6
 # define SCREEN_WIDTH 1920
 # define SCREEN_HEIGHT 1080
-# ifdef __linux__
-#  define KEY_FORWARD 119
-#  define KEY_BACKWARD 115
-#  define KEY_RIGHT 100
-#  define KEY_LEFT 97
-#  define KEY_TURN_LEFT 65363
-#  define KEY_TURN_RIGHT 65361
-#  define KEY_CROUCH 99
-#  define KEY_ESCAPE 65307
-#  define KEY_SPRINT 65362
-#  define KEY_DOOR 107
-#  define KEY_ATTACK 65505
-#  define MACOS 0
-#  define LINUX 1
-# else
 #  define KEY_FORWARD 13
 #  define KEY_BACKWARD 1
 #  define KEY_RIGHT 2
@@ -66,9 +51,7 @@ typedef struct s_struct
 #  define KEY_DOOR 40
 #  define KEY_MOUSE 49
 #  define KEY_ATTACK 257
-#  define MACOS 1
-#  define LINUX 0
-# endif
+#  define KEY_DEATH_MODE 31
 
 # ifndef BONUS
 #  define BONUS 0
@@ -98,7 +81,6 @@ typedef struct s_data
 	char			start_dir;
 	char			*map[1024];
 	int				security[20];
-	int				save;
 	int				x_map;
 	int				y_map;
 	int				frame;
@@ -141,7 +123,7 @@ typedef struct s_data
 	int				forward;
 	int				sprint;
 	int				mouse_flag;
-	int				mouse_center_flag;
+	int				death_flag;
 	int				backward;
 	int				right;
 	int				left;
@@ -232,9 +214,6 @@ void			add_hud(t_data *data);
 void			move_according_to_key_press(t_data *data);
 
 void			texture_check(t_data *data);
-
-void			save_image(t_data *data);
-void			screen_resize(t_data *data);
 
 void			ft_mlx_pixel_put(t_data *data, int x, int y, int color);
 void			sort_sprite(t_data *data);

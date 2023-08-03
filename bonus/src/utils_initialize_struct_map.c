@@ -6,7 +6,7 @@
 /*   By: hsozan <hsozan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 15:47:55 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/08/01 23:04:06 by hsozan           ###   ########.fr       */
+/*   Updated: 2023/08/03 15:52:59 by hsozan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void	initialize_struct2(t_data *data)
 	data->life = 30;
 	data->sprint = 0;
 	data->mouse_flag = 0;
+	data->death_flag = 0;
 	data->door_closed = 0;
 	data->v_bool_print_score = 0;
 	if (!BONUS)

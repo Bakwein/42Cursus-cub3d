@@ -112,10 +112,10 @@ $(bname):
 	@rm -rf bonus/src/*.o
 	@echo "$(PURPLE)./$(MAGENTA)$(name)$(PURPLE)_bonus$(CYAN) compiled successfully !$(Default) 🎉"
 
-mlx: $(obj)
+mlx: norm $(obj)
 	@make --silent -C mlx
 
-bmlx: $(bobj)
+bmlx: norm $(bobj)
 	@make --silent -C mlx
 
 clean:
@@ -130,6 +130,8 @@ fclean: clean
 	@make --silent -C mlx clean
 	@echo "$(RED)$(name)$(CYAN) deleted !$(Default) 🗑️"
 
+norm:
+	@norminette $(SRC) $(BSRC) ./cube3d.h bonus/cube3d.h
 re: fclean all
 
 reb: fclean bonus

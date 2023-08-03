@@ -6,7 +6,7 @@
 /*   By: hsozan <hsozan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 10:02:34 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/08/01 22:53:21 by hsozan           ###   ########.fr       */
+/*   Updated: 2023/08/03 15:50:08 by hsozan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,11 @@ int	ft_key_hook2(int keycode, t_data *data)
 	else if (keycode == KEY_MOUSE && BONUS && \
 		data->mouse_flag == 1)
 		data->mouse_flag = 0;
+	if (keycode == KEY_DEATH_MODE && BONUS && data->death_flag == 0)
+		data->death_flag = 1;
+	else if (keycode == KEY_DEATH_MODE && BONUS && \
+		data->death_flag == 1)
+		data->death_flag = 0;
 	return (0);
 }
 

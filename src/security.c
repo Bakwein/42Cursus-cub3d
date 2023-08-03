@@ -6,7 +6,7 @@
 /*   By: hsozan <hsozan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/12 16:03:33 by bmerchin          #+#    #+#             */
-/*   Updated: 2023/08/03 12:57:42 by hsozan           ###   ########.fr       */
+/*   Updated: 2023/08/03 15:39:37 by hsozan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,6 @@ int	security_cub(int ac, char **av, t_data *data)
 
 	i = 0;
 	len = ft_strlen(av[1]);
-	data->save = 0;
 	while (i < 20)
 		data->security[i++] = 0;
 	if (ac != 2)
