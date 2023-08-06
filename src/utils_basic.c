@@ -6,7 +6,7 @@
 /*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/06 12:25:13 by stunca            #+#    #+#             */
-/*   Updated: 2023/08/06 12:25:15 by stunca           ###   ########.fr       */
+/*   Updated: 2023/08/06 13:59:36 by stunca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_putstr_bn(char *str)
 {
-	write(0, str, ft_strlen(str));
-	write(0, "\n", 1);
+	write(1, str, ft_strlen(str));
+	write(1, "\n", 1);
 }
 
 int	ft_atoi(char *str)
