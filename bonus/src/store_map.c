@@ -6,7 +6,7 @@
 /*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/06 12:21:41 by stunca            #+#    #+#             */
-/*   Updated: 2023/08/06 12:21:43 by stunca           ###   ########.fr       */
+/*   Updated: 2023/08/06 14:23:28 by stunca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ void	store_map(int fd, t_data *data)
 	data->y_map = 0;
 	while (get_next_line(fd, &data->map[0]) == 1)
 	{
+		if (ft_strlen(data->map[0]) > 0 && !is_in(data->map[0][0], data->wl))
+			data->security[9] += 1;
 		i = 0;
 		while (i < ft_strlen(data->map[0]))
 		{

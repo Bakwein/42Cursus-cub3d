@@ -6,7 +6,7 @@
 /*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/06 12:28:19 by stunca            #+#    #+#             */
-/*   Updated: 2023/08/06 13:13:25 by stunca           ###   ########.fr       */
+/*   Updated: 2023/08/06 14:42:58 by stunca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	open_then_read(char *str, t_data *data)
 		data->security[11] = 1;
 		return ;
 	}
-	if (read(fd, NULL, 0) == -1)
+	if (read(fd, NULL, 0) < 0)
 	{
 		ft_putstr_bn("Error\nWrong texture path (folder)");
 		data->security[11] = 1;
