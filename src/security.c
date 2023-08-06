@@ -6,7 +6,7 @@
 /*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/06 12:24:54 by stunca            #+#    #+#             */
-/*   Updated: 2023/08/06 12:24:54 by stunca           ###   ########.fr       */
+/*   Updated: 2023/08/06 13:07:31 by stunca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ int	security_check(t_data *data)
 	}
 	if (data->security[9] != 0)
 	{
-		ft_putstr_bn("Error\nThere is at least one missing wall on the map");
+		write(1, "Error\nThere is at least one missing wall on the map", 52);
+		write(1, " or wrong map data\n", 19);
 		return (1);
 	}
 	if (data->security[10] != 0)
@@ -40,7 +41,6 @@ void	fd_check(int fd)
 		exit(0);
 	}
 }
-//if (ac != 2 && security_cub_av_check(av, data, ac)) bak!!!
 
 int	security_cub(int ac, char **av, t_data *data)
 {
