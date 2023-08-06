@@ -6,7 +6,7 @@
 /*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/06 12:25:03 by stunca            #+#    #+#             */
-/*   Updated: 2023/08/06 12:25:04 by stunca           ###   ########.fr       */
+/*   Updated: 2023/08/06 17:52:13 by stunca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ void	store_map(int fd, t_data *data)
 		}
 		if (is_in(data->map[0][i], data->wl))
 			break ;
+		if (data->map[0][0] != 0)
+			data->security[9] += 1;
 		free(data->map[0]);
 	}
 	store_map2(fd, data);

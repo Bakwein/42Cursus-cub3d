@@ -131,7 +131,7 @@ fclean: clean
 	@echo "$(RED)$(name)$(CYAN) deleted !$(Default) 🗑️"
 
 norm:
-	@norminette $(SRC) $(BSRC) ./cube3d.h bonus/cube3d.h
+	@norminette $(SRC) $(BSRC) ./cub3d.h bonus/cub3d.h
 re: fclean all
 
 reb: fclean bonus

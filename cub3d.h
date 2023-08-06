@@ -6,7 +6,7 @@
 /*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/06 12:28:28 by stunca            #+#    #+#             */
-/*   Updated: 2023/08/06 12:28:28 by stunca           ###   ########.fr       */
+/*   Updated: 2023/08/06 15:34:45 by stunca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,20 +39,18 @@ typedef struct s_struct
 # define NUM_TEXTURE_BONUS 6
 # define SCREEN_WIDTH 1920
 # define SCREEN_HEIGHT 1080
-
-#  define KEY_FORWARD 13
-#  define KEY_BACKWARD 1
-#  define KEY_RIGHT 2
-#  define KEY_LEFT 0
-#  define KEY_TURN_LEFT 124
-#  define KEY_TURN_RIGHT 123
-#  define KEY_CROUCH 8
-#  define KEY_ESCAPE 53
-#  define KEY_SPRINT 126
-#  define KEY_DOOR 40
-#  define KEY_MOUSE 49
-#  define KEY_ATTACK 257
-
+# define KEY_FORWARD 13
+# define KEY_BACKWARD 1
+# define KEY_RIGHT 2
+# define KEY_LEFT 0
+# define KEY_TURN_LEFT 124
+# define KEY_TURN_RIGHT 123
+# define KEY_CROUCH 8
+# define KEY_ESCAPE 53
+# define KEY_SPRINT 126
+# define KEY_DOOR 40
+# define KEY_MOUSE 49
+# define KEY_ATTACK 257
 
 # ifndef BONUS
 #  define BONUS 0

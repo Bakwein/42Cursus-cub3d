@@ -6,7 +6,7 @@
 /*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/06 12:23:21 by stunca            #+#    #+#             */
-/*   Updated: 2023/08/06 12:23:21 by stunca           ###   ########.fr       */
+/*   Updated: 2023/08/06 16:23:17 by stunca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,24 +34,24 @@ typedef struct s_struct
 
 # define MINIMAP_SIZE 5
 # define MOVING_SPEED 0.08
-# define ROTATION_SPEED 0.03
+# define ROTATION_SPEED 0.05
 # define NUM_SPRITE_BOMUS 28
 # define NUM_TEXTURE_BONUS 6
 # define SCREEN_WIDTH 1920
 # define SCREEN_HEIGHT 1080
-#  define KEY_FORWARD 13
-#  define KEY_BACKWARD 1
-#  define KEY_RIGHT 2
-#  define KEY_LEFT 0
-#  define KEY_TURN_LEFT 124
-#  define KEY_TURN_RIGHT 123
-#  define KEY_CROUCH 8
-#  define KEY_ESCAPE 53
-#  define KEY_SPRINT 126
-#  define KEY_DOOR 40
-#  define KEY_MOUSE 49
-#  define KEY_ATTACK 257
-#  define KEY_DEATH_MODE 31
+# define KEY_FORWARD 13
+# define KEY_BACKWARD 1
+# define KEY_RIGHT 2
+# define KEY_LEFT 0
+# define KEY_TURN_LEFT 124
+# define KEY_TURN_RIGHT 123
+# define KEY_CROUCH 8
+# define KEY_ESCAPE 53
+# define KEY_SPRINT 126
+# define KEY_DOOR 40
+# define KEY_MOUSE 49
+# define KEY_ATTACK 257
+# define KEY_DEATH_MODE 31
 
 # ifndef BONUS
 #  define BONUS 0
@@ -139,7 +139,6 @@ typedef struct s_data
 	int				v_bool_print_score;
 	int				heart[11][11];
 	int				the_end[19][36];
-
 
 	int				sprite_num;
 	double			sprite[1001][5];
