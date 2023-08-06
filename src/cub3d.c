@@ -6,7 +6,7 @@
 /*   By: stunca <stunca@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/06 12:24:06 by stunca            #+#    #+#             */
-/*   Updated: 2023/08/06 12:24:07 by stunca           ###   ########.fr       */
+/*   Updated: 2023/08/06 13:26:55 by stunca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,28 +103,6 @@ void	run_mlx(t_data *data)
 	init_images_mlx(data);
 	mlx_loop(data->mlx);
 }
-/*
-void mlx_hook(mlx_win_list_t *win_ptr, \
-int x_event, int x_mask, int (*f)(), void *param)
-win_ptr-> window pointer
-x_event -> x11 event
-x_mas-> x11 mask
-int (*f)() -> function
-Bu işlev, bir pencereye bir olay akışı bağlamak için kullanılır.
-
-
-
-mlx_loop_hook(data->mlx, render_next_frame, data);
- Olay döngüsü çalıştığı sürece tekrar tekrar çağrılacak bir işlevi \
-  kaydetmek için kullanılır. render_next_frame işlevi, tipik olarak \
-  bir grafik uygulamanın sonraki karesini işlemek için kullanılan bir işlevdir.
-
-
-mlx_loop(data->mlx);
-bir pencere için grafik kullanıcı arayüzü (GUI) döngüsünü çalıştırır. \
-Bu işlev, pencereye bir olay geldiğinde ilgili olayları işleyen ve \
-ardından yeni bir olay beklemeye başlayan sonsuz bir döngü oluşturur.
-*/
 
 int	main(int ac, char **av)
 {
